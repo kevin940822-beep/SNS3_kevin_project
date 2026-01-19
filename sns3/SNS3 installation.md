@@ -1,4 +1,4 @@
-# SNS3-installation
+# SNS3 installation
 
 > Refrence :
 > - https://github.com/sns3/sns3-satellite

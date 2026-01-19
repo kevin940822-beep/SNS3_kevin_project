@@ -158,7 +158,7 @@
 
 <div align="center">
 <img width="465" height="566" alt="image" src="https://github.com/user-attachments/assets/9e0aa6c4-350a-400f-acdc-e68d5112cc3d" />
-  <p align="center"><strong>Figure 4.</strong> SatNetDevice </p>
+  <p align="center"><strong>Figure 4.</strong> UT SatNetDevice </p>
 </div>
 
 >Refrence : https://www.sns3.org/doc/satellite-design.html#user-terminal
@@ -248,4 +248,12 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
     <p align="center"><strong>Figure 6.</strong> RTN / FWD packet flowchart</p>
 </div>
 
+## Gateway
+
+<div align="center">
+<img width="465" height="566" alt="image" src="https://github.com/user-attachments/assets/f2492a0c-a293-4d2b-b1cc-a99ebef8a262" />
+    <p align="center"><strong>Figure 7.</strong> GW SatNetDevice </p>
+</div>
+
+> Refrence : https://www.sns3.org/doc/satellite-design.html#gateway
 

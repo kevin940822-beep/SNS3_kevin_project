@@ -11,7 +11,7 @@
   - [Additional Note (SAT)](#additional-note-sat)
 - [Gateway](#gateway)
   - [Additional Note (GW)](#additional-note-gw)
-- [(NCC) Network control center](#ncc-network-control-center)
+- [NCC (Network control center)](#ncc-network-control-center)
 
 
 ## SNS3 Design
@@ -320,7 +320,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 - 如果沒有使用者資料可用，**GW** 會產生**虛擬 BBFrame (dummy BBFrames)** 來維持同步和 **連續幀傳輸(continuous frame transmission)**
 
 
-## **(NCC) Network control center**
+## **NCC (Network control center)**
 - **NCC (Network Control Centre)** 是專門負責**回傳鏈路（RTN）** 資源管理與調度的核心控制實體。
 - 包含 :
   - **Admission Control（準入控制）** : 決定哪些回傳請求可被接受、哪些要延後或拒絕

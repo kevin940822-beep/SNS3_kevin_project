@@ -265,7 +265,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 
 <div align="center">
 <img width="465" height="566" alt="image" src="https://github.com/user-attachments/assets/f2492a0c-a293-4d2b-b1cc-a99ebef8a262" />
-    <p align="center"><strong>Figure 7.</strong> GW SatNetDevice </p>
+    <p align="center"><strong>Figure 8.</strong> GW SatNetDevice </p>
 </div>
 
 > Refrence : https://www.sns3.org/doc/satellite-design.html#gateway

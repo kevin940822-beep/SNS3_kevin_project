@@ -298,7 +298,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
     - `SatInterference` : 評估接收時的干擾
 
 
-## Additional note
+## Additional Note
 - `SatNetDevice` 涵蓋從分類到物理傳輸的整個協定
 - **LLC 層** 透過獨立的 Tx 和 Rx 模組支援**雙向操作 (bidirectional operations)**，確保**全雙工通訊(full-duplex communication)**
 - **MAC 層** 負責根據 MODCOD 方案產生/調度 BBFrames

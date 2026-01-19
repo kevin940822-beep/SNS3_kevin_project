@@ -6,10 +6,10 @@
 - [Frame configuration (框架與時槽結構)](#frame-configuration-框架與時槽結構)
 - [Architecture (整體架構)](#architecture-整體架構)
 - [User terminal SatNetDevice](#user-terminal-satnetdevice)
-  - [Addintional Note (UT)](#addintional-note-ut)
+  - [Additional Note (UT)](#additional-note-ut)
 - [Geostationary satellite](#geostationary-satellite)
 - [Gateway](#gateway)
-  - [Addintional Note (GW)](#addintional-note-gw)
+  - [Additional Note (GW)](#additional-note-gw)
 
 
 ## SNS3 Design

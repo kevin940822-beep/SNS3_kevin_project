@@ -252,7 +252,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 - 與**SatGeoUserPhy**相同，包含`Tx`、`Rx`、`RxC`、`I`
 - 接收來自**GW**的訊號或向**GW**發送訊號。
 
-## **Additional Note (SAT)**
+### **Additional Note (SAT)**
 - **Transparent Forwarding (bent-pipe)** : 衛星不對封包進行處理，只負責放大和轉發訊號。
 - **SINR Calculation** : SINR分別在 **User End**和 **Feeder Ends** 進行計算，最後在 **GW** 使用複合公式進行組合。
 

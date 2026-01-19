@@ -72,7 +72,7 @@
  - Using **DVB-S2 Time Division Multiplexing (TDM)**.
  - feeder link 2 GHz bandwidth is:
    - Divided into **16 carriers**, each **125 MHz**. 
-   - Each carrier is statically mapped to a user link frequency color.  *(每個 carrier 固定對應到某一個 user-beam 的 125 MHz 顏色)*
+   - Each carrier is statically mapped to a user link frequency color.  *(每個 carrier 固定對應到某一個 user-beam 的 frequency color)*
    - Only one carrier per beam is supported.    *(每個 beam 只支援 一個 carrier)*
   
 ## Architecture (整體架構)
@@ -286,84 +286,79 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 
 
 - `Tx` : 
-  - `SatGenericStreamEncapsulator` : 把 GW 端要送往 UT 的資料，封裝成 **Generic Stream format (GSE)**.
-  - `SatQueue` : 暫存已封裝的資料(Queue)，等待送出。
-
- - `Rx` :
-   - `SatReturnLinkEncapsulator` : 把從衛星收到的 RTN 封包還原成上層封包可用的形式。
-   - `SatQueue` : 暫存已解封裝/待上送的 RTN 封包。
-
-*封裝/解封裝 + queue*
-
-### `SatGwMac` (Media Access Control - MAC Layer)
-
-- `SatFwdLinkScheduler` : **Forward link scheduler**, 決定要發送哪些資料以及何時發送。
-- `SatBbFrameContainer` : 存放組裝好的 **BBFrame (BaseBand Frame)** 資料
-  
-*排程和BBFrame組裝*
-
-### `SatGwPhy` (PHY Layer)
-- `SatPhyTx` : 處理實體層的傳輸邏輯
-
-- `SatPhyRx` : 處理實體層的接收邏輯
-  - `SatPhyRxCarrier` : 多個 carrier 的接收處理與干擾檢查
-    - `SatLinkResults` : 儲存鏈路結果（例如接收品質/是否成功等結果資料）
-    - `SatInterference` : 評估接收時的干擾
+  - `SatGenericStre。
+  - `SatPhyRxCarrier` : 多個 carrier 的接收處理與干擾檢查。
+    - `SatLinkResults` : 儲存鏈路結果（例如接收品質/是否成功等結果資料）。
+    - `SatInterference` : 評估接收時的干擾。
 
 
 ### **Additional Note (GW)**
-- `SatNetDevice` 涵蓋從分類到物理傳輸的整個協定
-- **LLC 層** 透過獨立的 Tx 和 Rx 模組支援**雙向操作 (bidirectional operations)**，確保**全雙工通訊(full-duplex communication)**
-- **MAC 層** 負責根據 MODCOD 方案產生/調度 BBFrames
+- `SatNetDevice` 涵蓋從分類到物理傳輸的整個協定。 
+- **LLC 層** 透過獨立的 Tx 和 Rx 模組支援**雙向操作 (bidirectional operations)**，確保**全雙工通訊(full-duplex communication)**。
+- **MAC 層** 負責根據 MODCOD 方案產生/調度 BBFrames。
 - **PHY層** 提供發送和**多載波接收(multi-carrier reception)** ，支援：
-  - **鏈路品質監測(Link quality monitoring)**
-  - **干擾評估(Interference assessment)**
-- 如果沒有使用者資料可用，**GW** 會產生**虛擬 BBFrame (dummy BBFrames)** 來維持同步和 **連續幀傳輸(continuous frame transmission)**
+  - **鏈路品質監測(Link quality monitoring)**。
+  - **干擾評估(Interference assessment)**。
+- 如果沒有使用者資料可用，**GW** 會產生**虛擬 BBFrame (dummy BBFrames)** 來維持同步和 **連續幀傳輸(continuous frame transmission)**。
 
 
 ## **NCC (Network control center)**
 **NCC (Network Control Centre)** 是專門負責**回傳鏈路（RTN）** 資源管理與調度的核心控制實體。
 
 包含 :
-  - **Admission Control（準入控制）** : 決定哪些回傳請求可被接受、哪些要延後或拒絕
-  - **Packet Scheduling（封包/時槽排程）** : NCC 會建立 **TBTP（Terminal Burst Time Plan）**，內容包含
-    - 哪些 timeslots 可供使用
-    - 每個 timeslot 的大小、start、duration
-    - 相應的 waveform（MODCOD）
+  - **Admission Control（準入控制）** : 決定哪些回傳請求可被接受、哪些要延後或拒絕。
+  - **Packet Scheduling（封包/時槽排程）** : NCC 會建立 **TBTP（Terminal Burst Time Plan）**，內容包含 : 
+    - 哪些 timeslots 可供使用。
+    - 每個 timeslot 的大小、start、duration。
+    - 相應的 waveform（MODCOD）。
 - **ACM（Adaptive Coding and Modulation）** 管理 :
-  - 根據 **GW** 收到 **UT** 回報的 **channel quality（例如 C/N0）**
-  - **NCC** 決定每個時槽要使用哪種 **MODCOD（modulation & coding）**
+  - 根據 **GW** 收到 **UT** 回報的 **channel quality（例如 C/N0）**。
+  - **NCC** 決定每個時槽要使用哪種 **MODCOD（modulation & coding）**。
 
 ### Global NCC and Scheduler Design
 **NCC** 為不同 **spot beam** 設置了各自的 scheduler（`SatBeamScheduler`）
 
 因為 : 
 
-- 每個 beam 都有不同 UT 分布
-- 不同 beam 的使用量/負載不一樣
-- channel conditions (SINR)不一樣 
+- 每個 beam 都有不同 UT 分布。
+- 不同 beam 的使用量/負載不一樣。
+- channel conditions (SINR)不一樣 。
 
 ### NCC 與 GW / SatNetDevice 的互動
 **NCC** 是直接附掛（attached）在每個 **GW** 與 `SatNetDevice` 上，這樣做可以 : 
 
-- 模擬時能用理想通道（callback）來模擬
-- 之後也可以替換成真正 protocol message
+- 模擬時能用理想通道（callback）來模擬。
+- 之後也可以替換成真正 protocol message。
 
 
 ## Channel
 *建模頻譜共享與同頻干擾*
 
-- `SatChannel` : 一個 frequency color（頻寬）
--  將特定頻寬內的資料傳送給共享相同頻寬的所有接收器
--  SNS3實現 :
-  -  同頻波束(Co-channel beams) : 共用相同頻寬，可能會互相干擾。
-  -  不同 frequency color 則不會互相影響
+- `SatChannel` 代表一個 frequency color（頻寬）。
+- 將特定頻寬內的資料傳送給共享相同頻寬的所有接收器。
+- SNS3實現 :
+  - **同頻波束(Co-channel beams)** : 共用相同頻寬，可能會互相干擾。
+  - 使用不同 frequency color 則不會互相影響。
 
-為了模擬現實中**同頻干擾不可避免**
+為了模擬現實中**同頻干擾不可避免**。
 
 <div align="center">
-<img width="827" height="523" alt="image" src="https://github.com/user-attachments/assets/a20b6a4a-9c92-45de-ae60-87260604f5fc" />
+<img width="1316" height="632" alt="image" src="https://github.com/user-attachments/assets/fcb9747c-c0a3-4b55-bc4c-f8e1d3b5e148" />
     <p align="center"><strong>Figure 9.</strong> Satellite channel structure with 16 beams </p>
 </div>
 
 > Refrence : https://www.sns3.org/doc/satellite-design.html#channel
+
+### User Link
+- 每個方向各有**4 個 `SatChannel` instances**。
+- 每個 **instances 代表 125 MHz 頻寬**，在參考系統中 : 
+  - 總共有 **72 個beams**。
+  - 72 / 4 = **18 個 spot-beams 共用同一個 frequency color**。
+  - 這 18 個 spot-beams 可能會相互干擾。
+ 
+### Feeder Link
+- 每個方向有 **16 個 `SatChannel` instances**。
+  - **每個 instance 代表 125 MHz 頻寬**。
+  - 計算方式 : 2 GHz / 0.125 GHz = 16
+- 所有 **GW** 使用相同的頻寬。
+- 最多 5 個 **GW** 共用同一個 channel instance

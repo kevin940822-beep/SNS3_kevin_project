@@ -12,6 +12,7 @@
 - [Gateway](#gateway)
   - [Additional Note (GW)](#additional-note-gw)
 - [NCC (Network control center)](#ncc-network-control-center)
+- [Channel](#channel)
 
 
 ## SNS3 Design
@@ -321,8 +322,9 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 
 
 ## **NCC (Network control center)**
-- **NCC (Network Control Centre)** 是專門負責**回傳鏈路（RTN）** 資源管理與調度的核心控制實體。
-- 包含 :
+**NCC (Network Control Centre)** 是專門負責**回傳鏈路（RTN）** 資源管理與調度的核心控制實體。
+
+包含 :
   - **Admission Control（準入控制）** : 決定哪些回傳請求可被接受、哪些要延後或拒絕
   - **Packet Scheduling（封包/時槽排程）** : NCC 會建立 **TBTP（Terminal Burst Time Plan）**，內容包含
     - 哪些 timeslots 可供使用
@@ -331,3 +333,37 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 - **ACM（Adaptive Coding and Modulation）** 管理 :
   - 根據 **GW** 收到 **UT** 回報的 **channel quality（例如 C/N0）**
   - **NCC** 決定每個時槽要使用哪種 **MODCOD（modulation & coding）**
+
+### Global NCC and Scheduler Design
+**NCC** 為不同 **spot beam** 設置了各自的 scheduler（`SatBeamScheduler`）
+
+因為 : 
+
+- 每個 beam 都有不同 UT 分布
+- 不同 beam 的使用量/負載不一樣
+- channel conditions (SINR)不一樣 
+
+### NCC 與 GW / SatNetDevice 的互動
+**NCC** 是直接附掛（attached）在每個 **GW** 與 `SatNetDevice` 上，這樣做可以 : 
+
+- 模擬時能用理想通道（callback）來模擬
+- 之後也可以替換成真正 protocol message
+
+
+## Channel
+*建模頻譜共享與同頻干擾*
+
+- `SatChannel` : 一個 frequency color（頻寬）
+-  將特定頻寬內的資料傳送給共享相同頻寬的所有接收器
+-  SNS3實現 :
+  -  同頻波束(Co-channel beams) : 共用相同頻寬，可能會互相干擾。
+  -  不同 frequency color 則不會互相影響
+
+為了模擬現實中**同頻干擾不可避免**
+
+<div align="center">
+<img width="827" height="523" alt="image" src="https://github.com/user-attachments/assets/a20b6a4a-9c92-45de-ae60-87260604f5fc" />
+    <p align="center"><strong>Figure 9.</strong> Satellite channel structure with 16 beams </p>
+</div>
+
+> Refrence : https://www.sns3.org/doc/satellite-design.html#channel

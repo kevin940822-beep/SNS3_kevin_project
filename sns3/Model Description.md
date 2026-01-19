@@ -7,6 +7,7 @@
 - [Architecture (整體架構)](#architecture-整體架構)
 - [User terminal SatNetDevice](#user-terminal-satnetdevice)
 - [Geostationary satellite](#geostationary-satellite)
+- [Gateway](#gateway)
 
 
 ## SNS3 Design
@@ -94,7 +95,7 @@
   - In addition to labeling latitude, longitude, altitude of UT, GEO satellite and GW.
 
 *(支援球面/大地座標（WGS80、GRS84），方便標示 UT / SAT / GW 的經緯度與高度)*
-### 1️⃣ Left side End user（地面使用者）
+### **1️⃣ Left side End user（地面使用者）**
 - Connection :
   - Use **CSMA channel** (Carrier Sense Multiple Access) connect to User Terminal(UT).
 - Protocol Stack :
@@ -105,7 +106,7 @@
 - This end user simply sends and receives IP traffic over a LAN interface. *(這個 End user 只是透過 LAN 介面收送 IP 流量)*
 - It does not know that its packets will cross a satellite system.
 
-### 2️⃣ UT (User Terminal)
+### **2️⃣ UT (User Terminal)**
 - Connection :
   - Use **SatChannel** connect to Satellite node.
 - Modules :
@@ -119,7 +120,7 @@
 - The UT plays the role of a customer premises terminal. *(UT 扮演的是一個 用戶端終端設備／小型路由器 的角色)*
 - It routes IP packets between the **local LAN** and the **satellite link**.
 
-### 3️⃣ Satellite node
+### **3️⃣ Satellite node**
 - Connection :
   - Use **SatChannel** to build **uplink/downlink** with  **UT** and **GW**.
 - Modules :
@@ -133,7 +134,7 @@
  
  - The satellite is essentially a transparent relay at the **physical**/**MAC** level. *(做透明轉發的中繼站)*
 
-### 4️⃣ GW (GateWay)
+### **4️⃣ GW (GateWay)**
 - Connection :
   - Use **Ideal channel** connect to **End Users** .
 - Modules :
@@ -141,7 +142,7 @@
   - `CSMA` : Communicates with end users on the ground via terrestrial networks (e.g., Wi-Fi, wired LAN).
   - `GeoPosition` : Records the gateway’s geographic coordinates.
 
-### 5️⃣ Right side End User
+### **5️⃣ Right side End User**
 - Connection :
   - Use **Ideal channel** connect to **End Users** .
   - Representing a simplified model without interference or delay. *(無延遲無干擾的簡易模型)*
@@ -163,50 +164,49 @@
 
 >Refrence : https://www.sns3.org/doc/satellite-design.html#user-terminal
 
-### UT負責 : 
+### **UT負責** : 
 - DVB-RCS2（RTN）回傳鏈路：burst transmission logic（上行 burst 發送邏輯）
 - DVB-S2（FWD）前向鏈路：BB frame reception logic（下行 BBFrame 接收邏輯）
 
-### SatNetDevice
+### `SatNetDevice`
 - UT 對衛星網路的介面
 - 內部實作 DVB-RCS2 / DVB-S2 所需的 LLC、MAC、PHY 功能
 
-### SatPacketClassifier
+### `SatPacketClassifier`
 - 封包分類
 - 根據封包特徵（QoS、目的地）決定後續走哪條處理路徑 (queue / module)。
 
-### SatUtLlc (Logical Link Control - LLC Layer)
+### `SatUtLlc` (Logical Link Control - LLC Layer)
 - `Tx` : 
-  - **SatReturnLinkEncapsulator** : 將上行 IP packets 封裝成 **RLE (Return Link Encapsulation)** 格式，for **return channel transmission**.
-  - **SatQueue** : 暫存上行資料（封裝後 / 等待排程）
+  - `SatReturnLinkEncapsulator` : 將上行 IP packets 封裝成 **RLE (Return Link Encapsulation)** 格式，for **return channel transmission**.
+  - `SatQueue` : 暫存上行資料（封裝後 / 等待排程）
 
- - `Rx`（FWD 下行）:
-   - **SatGenericStreamEncapsulator** : 將前向鏈路（DVB-S2）收到的資料做解封包/重新封包。
-   - **SatQueue** : 暫存下行資料(收到 / 解封裝後)。
+- `Rx`（FWD 下行）:
+   - `SatGenericStreamEncapsulator` : 將前向鏈路（DVB-S2）收到的資料做解封包/重新封包。
+   - `SatQueue` : 暫存下行資料(收到 / 解封裝後)。
 
-- **SatRequestManager** :
+- `SatRequestManager` 
   - 監控 queue 狀態
   - 必要時送 **CR (Capacity Request)** 給 **NCC (Network Control Center)**
-  - 支援**RBDC(Rate-Based Dynamic Capacity)** / **VBDC(Volume-Based Dynamic Capacity)**
+  - 支援 :
+    - **RBDC(Rate-Based Dynamic Capacity)** 基於速率的動態容量
+    - **VBDC(Volume-Based Dynamic Capacity)** 基於容量的動態容量
 
 queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ NCC 在 TBTP 分配上行 timeslot 給 UT
 
-### SatUtMac (Media Access Control - MAC Layer)
-- **SatUtScheduler** : 根據 **TBTP(Terminal Burst Time Plan)** 資訊來排程 time slots
-- **SatRandomAccess** : 支援 random access mechanisms
-- **SatTbtpContainer** : 保存 NCC 傳送的 TBTP
+### `SatUtMac` (Media Access Control - MAC Layer)
+- `SatUtScheduler` : 根據 **TBTP(Terminal Burst Time Plan)** 資訊來排程 time slots
+- `SatRandomAccess` : 支援 random access mechanisms
+- `SatTbtpContainer` : 保存 NCC 傳送的 TBTP
   
 *(遵守衛星系統的存取規則。)*
 
-### SatUtPhy (PHY Layer)
-- **SatPhyTx** : 處理實體層的傳輸邏輯
-
-- **SatPhyRx** : 處理實體層的接收邏輯
-  - **SatPhyRxCarrier** : 多個 carrier 的接收處理與干擾檢查
-    - **SatLinkResults** : 儲存封包接收結果
-    - **SatInterference** : 評估接收時的干擾
-
-
+### `SatUtPhy` (PHY Layer)
+- `SatPhyTx` : 處理實體層的傳輸邏輯
+- `SatPhyRx` : 處理實體層的接收邏輯
+  - `SatPhyRxCarrier` : 多個 carrier 的接收處理與干擾檢查
+    - `SatLinkResults` : 儲存封包接收結果
+    - `SatInterference` : 評估接收時的干擾
 
 ## Geostationary satellite
 
@@ -217,7 +217,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 
 >Refrence : https://www.sns3.org/doc/satellite-design.html#geostationary-satellite
 
-### SatGeoUserPhy
+### `SatGeoUserPhy`
 
 - 處理 **User Link PHY layer**
 
@@ -229,7 +229,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
   - `I` : Interference Estimator, 計算**SINR (Signal-to-Interference-plus-Noise Ratio)**.
    
 
-### SatGeoFeederPhy 
+### `SatGeoFeederPhy` 
 
 - 處理**Feeder Link PHY layer**
 
@@ -256,4 +256,41 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 </div>
 
 > Refrence : https://www.sns3.org/doc/satellite-design.html#gateway
+
+### `SatNetDevice`
+- **GW** 網路設備的容器
+- 和**UT**的差別 : **GW**主要負責 FWD 發送 以及 RTN 接收
+
+### `SatPacketClassifier`
+- 將上層送下來的封包做分類
+- 決定後續的路由路徑和調度策略
+
+*GW 端的入口分流器*
+
+### `SatGwLlc` (Logical Link Control - LLC Layer)
+*處理資料的封裝和排程*
+
+- `Tx` : 
+  - `SatGenericStreamEncapsulator` : 把 GW 端要送往 UT 的資料，封裝成 **Generic Stream format (GSE)**.
+  - `SatQueue` : 暫存已封裝的資料(Queue)，等待送出。
+
+ - `Rx` :
+   - `SatReturnLinkEncapsulator` : 把從衛星收到的 RTN 封包還原成上層封包可用的形式。
+   - `SatQueue` : 暫存已解封裝/待上送的 RTN 封包。
+
+### `SatGwMac` (Media Access Control - MAC Layer)
+- `SatFwdLinkScheduler` : 根據 **TBTP(Terminal Burst Time Plan)** 資訊來排程 time slots
+- `SatRandomAccess` : 支援 random access mechanisms
+- `SatTbtpContainer` : 保存 NCC 傳送的 TBTP
+  
+*(排程和BBFrame組裝)*
+
+### `SatUtPhy` (PHY Layer)
+- `SatPhyTx` : 處理實體層的傳輸邏輯
+
+- `SatPhyRx` : 處理實體層的接收邏輯
+  - `SatPhyRxCarrier` : 多個 carrier 的接收處理與干擾檢查
+    - `SatLinkResults` : 儲存封包接收結果
+    - `SatInterference` : 評估接收時的干擾
+
 

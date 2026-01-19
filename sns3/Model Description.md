@@ -11,6 +11,7 @@
   - [Additional Note (SAT)](#additional-note-sat)
 - [Gateway](#gateway)
   - [Additional Note (GW)](#additional-note-gw)
+- [(NCC) Network control center](#ncc-network-control-center)
 
 
 ## SNS3 Design
@@ -317,3 +318,16 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
   - **鏈路品質監測(Link quality monitoring)**
   - **干擾評估(Interference assessment)**
 - 如果沒有使用者資料可用，**GW** 會產生**虛擬 BBFrame (dummy BBFrames)** 來維持同步和 **連續幀傳輸(continuous frame transmission)**
+
+
+## **(NCC) Network control center**
+- **NCC (Network Control Centre)** 是專門負責**回傳鏈路（RTN）** 資源管理與調度的核心控制實體。
+- 包含 :
+  - **Admission Control（準入控制）** : 決定哪些回傳請求可被接受、哪些要延後或拒絕
+  - **Packet Scheduling（封包/時槽排程）** : NCC 會建立 **TBTP（Terminal Burst Time Plan）**，內容包含
+    - 哪些 timeslots 可供使用
+    - 每個 timeslot 的大小、start、duration
+    - 相應的 waveform（MODCOD）
+- **ACM（Adaptive Coding and Modulation）** 管理 :
+  - 根據 **GW** 收到 **UT** 回報的 **channel quality（例如 C/N0）**
+  - **NCC** 決定每個時槽要使用哪種 **MODCOD（modulation & coding）**

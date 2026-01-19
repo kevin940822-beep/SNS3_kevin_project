@@ -6,10 +6,10 @@
 - [Frame configuration (框架與時槽結構)](#frame-configuration-框架與時槽結構)
 - [Architecture (整體架構)](#architecture-整體架構)
 - [User terminal SatNetDevice](#user-terminal-satnetdevice)
-  - [Addintional Note](#addintional-note)
+  - [Addintional Note (UT)](#addintional-note-ut)
 - [Geostationary satellite](#geostationary-satellite)
 - [Gateway](#gateway)
-  - [Addintional Note](#addintional-note-1)
+  - [Addintional Note (GW)](#addintional-note-gw)
 
 
 ## SNS3 Design
@@ -241,7 +241,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 - 與**SatGeoUserPhy**相同，包含`Tx`、`Rx`、`RxC`、`I`
 - 接收來自**GW**的訊號或向**GW**發送訊號。
 
-## Addintional Note
+## Addintional Note (UT)
 - **Transparent Forwarding (bent-pipe)** : 衛星不對封包進行處理，只負責放大和轉發訊號。
 - **SINR Calculation** : SINR分別在 **User End**和 **Feeder Ends** 進行計算，最後在 **GW** 使用複合公式進行組合。
 
@@ -298,7 +298,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
     - `SatInterference` : 評估接收時的干擾
 
 
-## Additional Note
+## Additional Note (GW)
 - `SatNetDevice` 涵蓋從分類到物理傳輸的整個協定
 - **LLC 層** 透過獨立的 Tx 和 Rx 模組支援**雙向操作 (bidirectional operations)**，確保**全雙工通訊(full-duplex communication)**
 - **MAC 層** 負責根據 MODCOD 方案產生/調度 BBFrames

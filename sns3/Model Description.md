@@ -8,6 +8,7 @@
 - [User terminal SatNetDevice](#user-terminal-satnetdevice)
   - [Additional Note (UT)](#additional-note-ut)
 - [Geostationary satellite](#geostationary-satellite)
+  - [Additional Note (SAT)](#additional-note-sat)
 - [Gateway](#gateway)
   - [Additional Note (GW)](#additional-note-gw)
 
@@ -210,6 +211,9 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
     - `SatLinkResults` : 儲存鏈路結果（例如接收品質/是否成功等結果資料）
     - `SatInterference` : 評估接收時的干擾
 
+## Additional Note (UT)
+
+
 ## Geostationary satellite
 
 <div align="center">
@@ -241,7 +245,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 - 與**SatGeoUserPhy**相同，包含`Tx`、`Rx`、`RxC`、`I`
 - 接收來自**GW**的訊號或向**GW**發送訊號。
 
-## Addintional Note (UT)
+## Additional Note (SAT)
 - **Transparent Forwarding (bent-pipe)** : 衛星不對封包進行處理，只負責放大和轉發訊號。
 - **SINR Calculation** : SINR分別在 **User End**和 **Feeder Ends** 進行計算，最後在 **GW** 使用複合公式進行組合。
 

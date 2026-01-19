@@ -212,13 +212,18 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
     - `SatInterference` : 評估接收時的干擾
 
 ## Additional Note (UT)
+<div align="center">
+<img width="233" height="666" alt="image" src="https://github.com/user-attachments/assets/939da820-8071-4a3c-8670-217766edca38" />
+    <p align="center"><strong>Figure 5.</strong> UT flowchart </p>
+</div>
+
 
 
 ## Geostationary satellite
 
 <div align="center">
 <img width="721" height="395" alt="image" src="https://github.com/user-attachments/assets/27381ff5-c92c-4c55-b410-db6455205ca1" />
-    <p align="center"><strong>Figure 5.</strong> SatGeoNetDevice </p>
+    <p align="center"><strong>Figure 6.</strong> SatGeoNetDevice </p>
 </div>
 
 >Refrence : https://www.sns3.org/doc/satellite-design.html#geostationary-satellite
@@ -251,7 +256,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 
 <div align="center">
 <img width="517" height="662" alt="image" src="https://github.com/user-attachments/assets/4f107856-3f0c-4778-8e36-981e0f88c3b3" />
-    <p align="center"><strong>Figure 6.</strong> RTN / FWD packet flowchart</p>
+    <p align="center"><strong>Figure 7.</strong> RTN / FWD packet flowchart</p>
 </div>
 
 ## Gateway

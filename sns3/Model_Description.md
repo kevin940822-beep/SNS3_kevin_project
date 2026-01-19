@@ -1,7 +1,5 @@
 ### Refrence
-> https://www.sns3.org/doc/satellite-design.html#frame-configuration
-> 
-> https://github.com/sns3/sns3-satellite/blob/master/doc/satellite-design.rst
+> https://www.sns3.org/doc/satellite-design.html#model-description
 
 # Table of Contents
 - [SNS3 Design](#sns3-design)

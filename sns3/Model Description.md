@@ -6,8 +6,10 @@
 - [Frame configuration (框架與時槽結構)](#frame-configuration-框架與時槽結構)
 - [Architecture (整體架構)](#architecture-整體架構)
 - [User terminal SatNetDevice](#user-terminal-satnetdevice)
+  - [Addintional Note](#addintional-note1)
 - [Geostationary satellite](#geostationary-satellite)
 - [Gateway](#gateway)
+  - [Addintional Note](#addintional-note2)
 
 
 ## SNS3 Design
@@ -205,7 +207,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 - `SatPhyTx` : 處理實體層的傳輸邏輯
 - `SatPhyRx` : 處理實體層的接收邏輯
   - `SatPhyRxCarrier` : 多個 carrier 的接收處理與干擾檢查
-    - `SatLinkResults` : 儲存封包接收結果
+    - `SatLinkResults` : 儲存鏈路結果（例如接收品質/是否成功等結果資料）
     - `SatInterference` : 評估接收時的干擾
 
 ## Geostationary satellite
@@ -239,7 +241,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 - 與**SatGeoUserPhy**相同，包含`Tx`、`Rx`、`RxC`、`I`
 - 接收來自**GW**的訊號或向**GW**發送訊號。
 
-### Addintional Note
+## Addintional Note
 - **Transparent Forwarding (bent-pipe)** : 衛星不對封包進行處理，只負責放大和轉發訊號。
 - **SINR Calculation** : SINR分別在 **User End**和 **Feeder Ends** 進行計算，最後在 **GW** 使用複合公式進行組合。
 
@@ -268,7 +270,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 *GW 端的入口分流器*
 
 ### `SatGwLlc` (Logical Link Control - LLC Layer)
-*處理資料的封裝和排程*
+
 
 - `Tx` : 
   - `SatGenericStreamEncapsulator` : 把 GW 端要送往 UT 的資料，封裝成 **Generic Stream format (GSE)**.
@@ -278,19 +280,29 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
    - `SatReturnLinkEncapsulator` : 把從衛星收到的 RTN 封包還原成上層封包可用的形式。
    - `SatQueue` : 暫存已解封裝/待上送的 RTN 封包。
 
-### `SatGwMac` (Media Access Control - MAC Layer)
-- `SatFwdLinkScheduler` : 根據 **TBTP(Terminal Burst Time Plan)** 資訊來排程 time slots
-- `SatRandomAccess` : 支援 random access mechanisms
-- `SatTbtpContainer` : 保存 NCC 傳送的 TBTP
-  
-*(排程和BBFrame組裝)*
+*封裝/解封裝 + queue*
 
-### `SatUtPhy` (PHY Layer)
+### `SatGwMac` (Media Access Control - MAC Layer)
+
+- `SatFwdLinkScheduler` : **Forward link scheduler**, 決定要發送哪些資料以及何時發送。
+- `SatBbFrameContainer` : 存放組裝好的 **BBFrame (BaseBand Frame)** 資料
+  
+*排程和BBFrame組裝*
+
+### `SatGwPhy` (PHY Layer)
 - `SatPhyTx` : 處理實體層的傳輸邏輯
 
 - `SatPhyRx` : 處理實體層的接收邏輯
   - `SatPhyRxCarrier` : 多個 carrier 的接收處理與干擾檢查
-    - `SatLinkResults` : 儲存封包接收結果
+    - `SatLinkResults` : 儲存鏈路結果（例如接收品質/是否成功等結果資料）
     - `SatInterference` : 評估接收時的干擾
 
 
+## Additional note
+- `SatNetDevice` 涵蓋從分類到物理傳輸的整個協定
+- **LLC 層** 透過獨立的 Tx 和 Rx 模組支援**雙向操作 (bidirectional operations)**，確保**全雙工通訊(full-duplex communication)**
+- **MAC 層** 負責根據 MODCOD 方案產生/調度 BBFrames
+- **PHY層** 提供發送和**多載波接收(multi-carrier reception)** ，支援：
+  - **鏈路品質監測(Link quality monitoring)**
+  - **干擾評估(Interference assessment)**
+- 如果沒有使用者資料可用，**GW** 會產生**虛擬 BBFrame (dummy BBFrames)** 來維持同步和 **連續幀傳輸(continuous frame transmission)**

@@ -9,7 +9,7 @@
   - [Addintional Note](#addintional-note)
 - [Geostationary satellite](#geostationary-satellite)
 - [Gateway](#gateway)
-  - [Addintional Note](#addintional-note)
+  - [Addintional Note](#addintional-note1)
 
 
 ## SNS3 Design

@@ -8,6 +8,7 @@
   - [BBHEADER](#bbheader)
   - [BBframe Tx](#bbframe-tx)
   - [BBFrame Merge](#bbframe-merge)
+- [flowchart](#flowchart)
 
 
 ## Step 
@@ -251,5 +252,10 @@ Merge From <- [BBFrameTx] Time: 3.95405, Frame Type: NORMAL_FRAME, ModCod: QPSK_
 -->
 
 ## flowchart
+
+<div align="center">
 <img width="487" height="1002" alt="image" src="https://github.com/user-attachments/assets/631bbbaf-7ea9-448b-8a25-ba40967beed4" />
 <img width="487" height="857" alt="image" src="https://github.com/user-attachments/assets/51726b2a-0922-41a0-977a-939ac44287cc" />
+</div>
+<p align="center"><strong>Figure 1.</strong> FWD flowchart </p>
+

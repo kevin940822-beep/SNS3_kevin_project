@@ -426,14 +426,36 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 - MODCOD range : QPSK 1/3 to 16QAM 5/6
 - Burst lengths : 536 or 1616 symbols
 
-**GW 量測 C/No (Carrier-to-Noise ratio)**，**回報給 NCC 為每個 UT 選擇 MODCOD** (目標是**光譜效率最好**，同時**滿足約定 error rate**)
+**GW 量測 C/No (Carrier-to-Noise ratio)**，回報給 **NCC 為每個 UT 選擇 MODCOD** (目標是**光譜效率最好**)
 
 ### Six Step Scheduling Procedure
 
 <div align="center">
-<img width="1142" height="474" alt="image" src="https://github.com/user-attachments/assets/a7da9a76-d3a5-43e9-bbce-7a6161cc1f22" />
+<img width="1314" height="550" alt="image" src="https://github.com/user-attachments/assets/f8ce7afa-7bdb-44a7-9ab4-f23b9f5de823" />
     <p align="center"><strong>Figure 10.</strong> Six step scheduling procedure </p>
 </div>
 
 ## Demand Assignment Multiple Access (DAMA)
 DAMA 在 **Request Manager (RM)** 模組中實現，根據需求 **動態評估**和**分配頻寬**。按照 **RC index (resource configuration index)** 實作，每個index都有單獨的設定。
+
+- DAMA：決定**每個 UT 應該拿多少容量**
+- Return-link scheduler : 把這些容量**轉成 time slots + TBTP**
+
+
+### 支援的容量分配類型(Capacity Allocation Types)
+- **CRA (Constant Rate Assignment**) : **固定、長期頻寬需求**
+- **RBDC (Rate-Based Dynamic Capacity)** : 根據**當前速率需求**調整，**適合持續性資料流**
+- **VBDC (Volume-Based Dynamic Capacity)** : 依 **queue volume 分配**，適合 **bursty traffic**
+
+### Configuration and Operation
+- **Request Manager (RM)**  透過**底層服務參數(lower-layer service parameters)進行設定**。
+- 每個 RC index 都可以獨立配置以進行 DAMA 操作。
+
+### Evaluation and Capacity Request Process
+
+- Request Manager (RM) 會 **定期或按需評估** 是否需要**針對給定的 RC index 發送 Capacity Request (CR)**
+- Request Manager (RM) 監控 :
+  - **UT packet queues** (user terminal)
+  - **Incoming traffic rates**
+  - 先前從 TBTPs (Terminal Burst Time Plans) 接收的 **DA resources**
+- CRs are modeled as **real signaling messages**, with a **probability of transmission error considered**(考慮傳送錯誤機率).

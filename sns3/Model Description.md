@@ -340,10 +340,10 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
   - **同頻波束(Co-channel beams)** : 共用相同頻寬，可能會互相干擾。
   - 使用不同 frequency color 則不會互相影響。
 
-為了模擬現實中**同頻干擾不可避免**。
+為了模擬現實中**同頻干擾**。
 
 <div align="center">
-<img width="1316" height="632" alt="image" src="https://github.com/user-attachments/assets/fcb9747c-c0a3-4b55-bc4c-f8e1d3b5e148" />
+<img width="1137" height="474" alt="image" src="https://github.com/user-attachments/assets/35711be1-0195-4364-8a40-dac53ef61a4f" />
     <p align="center"><strong>Figure 9.</strong> Satellite channel structure with 16 beams </p>
 </div>
 

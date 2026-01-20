@@ -1,4 +1,4 @@
-# SNS3 sat-rtn-system-test-example.cc
+# sat-rtn-system-test-example.cc
 ### [Refrence ](https://github.com/sns3/sns3-satellite/blob/0fc2b8c74f0d9c2b0c3ee4ed132064a40ad2daf1/examples/sat-rtn-system-test-example.cc)
 
 ### [sns3 set up](https://github.com/kevin940822-beep/OpenAirInterface-NTN-Integration/blob/main/sns3/SNS3_installation.md#sns3-installation)

@@ -13,6 +13,7 @@
   - [Additional Note (GW)](#additional-note-gw)
 - [NCC (Network control center)](#ncc-network-control-center)
 - [Channel](#channel)
+- [Random access (RA) in DVB-RCS2](#random-access-ra-in-dvb-rcs2)
 
 
 ## SNS3 Design
@@ -362,3 +363,45 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
   - 計算方式 : 2 GHz / 0.125 GHz = 16
 - 所有 **GW** 使用相同的頻寬。
 - 最多 5 個 **GW** 共用同一個 channel instance
+
+
+
+## Random access (RA) in DVB-RCS2
+
+主要有三種 RA 模式 (DVB-RCS2)
+
+- **CRDSA (Contention Resolution Diversity Slotted ALOHA)** : 用於**初始資料存取**和**緊急傳輸**。
+- **Slotted ALOHA** : 只用在 **control messages**，payload 小。
+- **MARSALA (Multi-Replica Decoding using Correlation based Localisation)** : 在 CRDSA **SIC (successive interference cancellation) cycle 結束後進一步改善性能**。
+
+### CRDSA
+**DVB-RCS2 的核心 RA 技術**，為 **UT 提供高效率的存取**。
+
+use case : 
+
+- **RA Cold Start** : UT 開機時的初始請求(沒有任何 DA 資源)。
+  - 如果只用 **Slotted ALOHA** → 碰撞太嚴重、效率太差
+  - GW / Satellite 端做 SIC（successive interference cancellation），大幅提升吞吐量
+- **RA-DAMA Top-Up** : 配額用完前的額外容量， DA 不夠用（流量突然增加）。
+- **RA-DAMA Back-Up** : 備份通訊，避免 DA 暫時不可用或失效。
+- **RA IP Queue** : 對已排程的IP資料進行 Random access。
+- **RA Capacity Request** : 一般頻寬請求。
+- **RA for SCADA** : 用於工業遠端監控系統 (industrial remote monitoring systems)。
+
+### Key Feature 
+- 發送多個資料包副本以提高成功率。
+- 使用 **SIC (Successive Interference Cancellation) 技術解決衝突**。
+- 針對 **RA Cold Start** 進行了最佳化，以減少在沒有 dedicated resources 可用時的封包延遲。
+
+### Slotted ALOHA
+由於 payload 小，只用於**control messages**。
+**control messages** 包含：
+- **Capacity Request (CR)**
+- **ARQ ACK** control messages
+
+### MARSALA Enhancement
+
+- 當 **CRDSA 的 SIC decoding fails** 時啟動。
+- 提高 **解碼精度(decoding accuracy)** 並**減少掉封包(packet loss)**。
+
+## Return link packet scheduling

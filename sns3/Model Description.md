@@ -410,7 +410,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 
 
 ## Return link packet scheduling
-在DVB-RCS2，**Return Link Scheduler** 由 **Network Control Center (NCC)** 集中管理。
+在DVB-RCS2，**Return Link Scheduler** 由 **Network Control Center (NCC)** 以beam為單位集中管理。
 
 每個 **spot-beam 有獨立的scheduler**，且之間不會相互影響
 
@@ -439,7 +439,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 DAMA 在 **Request Manager (RM)** 模組中實現，根據需求 **動態評估**和**分配頻寬**。按照 **RC index (resource configuration index)** 實作，每個index都有單獨的設定。
 
 - DAMA：決定**每個 UT 應該拿多少容量**
-- Return-link scheduler : 把這些容量**轉成 time slots + TBTP**
+- Return-link scheduler : 把這些容量**轉成 time slots + TBTP** 
 
 
 ### 支援的容量分配類型(Capacity Allocation Types)

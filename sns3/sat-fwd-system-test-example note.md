@@ -211,14 +211,9 @@ Merge From <- [BBFrameTx] Time: 3.95405, Frame Type: NORMAL_FRAME, ModCod: QPSK_
 
 提高 frame 的 occupancy，減少 padding 浪費。
 
-
-
-
-
-
 ---
 
--->
+<!--
 ### CRC-8 (for UP)
 
 - 如果 UPL = 0_D (continuous generic stream)連續位元流，CRC-8 encoder 不做任何事，直接把資料往下送。
@@ -253,5 +248,5 @@ Merge From <- [BBFrameTx] Time: 3.95405, Frame Type: NORMAL_FRAME, ModCod: QPSK_
 
 > refrence : [ETSI EN 302 307-1](https://www.etsi.org/deliver/etsi_en/302300_302399/30230701/01.04.01_20/en_30230701v010401a.pdf) 5.1.4
 
-
+-->
 

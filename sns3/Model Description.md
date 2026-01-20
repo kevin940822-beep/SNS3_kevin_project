@@ -407,4 +407,26 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 ## Return link packet scheduling
 在DVB-RCS2，**Return Link Scheduler** 由 **Network Control Center (NCC)** 集中管理。
 
-每個 **spot-beam 有獨立的scheduler**，之間不會相互影響
+每個 **spot-beam 有獨立的scheduler**，且之間不會相互影響
+
+### Time Slot Configuration Modes
+|Mode|	Description|
+|---|---|
+|Conf-0	|  **固定時槽(time slots) + 固定 waveform**(MODCOD + burst length 固定)|
+|Conf-1	|  **固定時槽(time slots) + 可變 MODCOD(ACM)**          |
+|Conf-2	|  根據 **user demand, channel conditions 動態生成time slot**，每個 slot 可用不同 waveform|
+
+### MODCOD and Waveform Support
+- waveforms : 3 to 22
+- MODCOD range : QPSK 1/3 to 16QAM 5/6
+- Burst lengths : 536 or 1616 symbols
+
+**GW 量測 C/No (Carrier-to-Noise ratio)**，**回報給 NCC 為每個 UT 選擇 MODCOD** (目標是**光譜效率最好**，同時**滿足約定 error rate**)
+
+### Six Step Scheduling Procedure
+
+<div align="center">
+<img width="1142" height="474" alt="image" src="https://github.com/user-attachments/assets/a7da9a76-d3a5-43e9-bbce-7a6161cc1f22" />
+    <p align="center"><strong>Figure 10.</strong> Six step scheduling procedure </p>
+</div>
+

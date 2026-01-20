@@ -14,6 +14,7 @@
 - [NCC (Network control center)](#ncc-network-control-center)
 - [Channel](#channel)
 - [Random access (RA) in DVB-RCS2](#random-access-ra-in-dvb-rcs2)
+- [Return link packet scheduling](#return-link-packet-scheduling)
 
 
 ## SNS3 Design
@@ -403,6 +404,8 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 
 - 當 **CRDSA 的 SIC decoding fails** 時啟動。
 - 提高 **解碼精度(decoding accuracy)** 並**減少掉封包(packet loss)**。
+
+
 
 ## Return link packet scheduling
 在DVB-RCS2，**Return Link Scheduler** 由 **Network Control Center (NCC)** 集中管理。

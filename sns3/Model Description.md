@@ -15,7 +15,7 @@
 - [Channel](#channel)
 - [Random access (RA) in DVB-RCS2](#random-access-ra-in-dvb-rcs2)
 - [Return link packet scheduling](#return-link-packet-scheduling)
-- [Demand Assignment Multiple Access (DAMA)](demand-assignment-multiple-access-dama)
+- [Demand Assignment Multiple Access (DAMA)](#demand-assignment-multiple-access-dama)
 - [UT Scheduler](#ut-scheduler)
 - [FWD Link Scheduler](#fwd-link-scheduler)
 - [ARQ (Automatic Repeat reQuest)](#arq-automatic-repeat-request)

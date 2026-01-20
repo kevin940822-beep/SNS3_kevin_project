@@ -377,7 +377,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 ### CRDSA
 **DVB-RCS2 的核心 RA 技術**，為 **UT 提供高效率的存取**。
 
-use case : 
+#### use case : 
 
 - **RA Cold Start** : UT 開機時的初始請求(沒有任何 DA 資源)。
   - 如果只用 **Slotted ALOHA** → 碰撞太嚴重、效率太差
@@ -388,7 +388,7 @@ use case :
 - **RA Capacity Request** : 一般頻寬請求。
 - **RA for SCADA** : 用於工業遠端監控系統 (industrial remote monitoring systems)。
 
-### Key Feature 
+#### Key Feature 
 - 發送多個資料包副本以提高成功率。
 - 使用 **SIC (Successive Interference Cancellation) 技術解決衝突**。
 - 針對 **RA Cold Start** 進行了最佳化，以減少在沒有 dedicated resources 可用時的封包延遲。
@@ -405,3 +405,6 @@ use case :
 - 提高 **解碼精度(decoding accuracy)** 並**減少掉封包(packet loss)**。
 
 ## Return link packet scheduling
+在DVB-RCS2，**Return Link Scheduler** 由 **Network Control Center (NCC)** 集中管理。
+
+每個 **spot-beam 有獨立的scheduler**，之間不會相互影響

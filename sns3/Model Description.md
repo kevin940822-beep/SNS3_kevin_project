@@ -505,5 +505,5 @@ Two mobility models are implemented for UTs (User Terminals) :
 #### handover module可以 attach 到任何 UT。
 - handover module 會監控周圍 carriers 的功率
 - 當 UT 目前**鎖定的 carrier功率掉到低於預設門檻（predefined threshold）** 
-- UT 的 handover module 會向 NCC 請求授權，希望切到另一個指定的 carrier/beam
+- UT 的 handover module 會向 NCC 請求授權，希望切換到其他的 carrier/beam
 - NCC 授權 handover ，確保通訊連續性。

@@ -497,15 +497,12 @@ ARQ **operates at the LLC layer**, and supports retransmissions for :\
 
 ## Mobility and Handover
 
-Two mobility models are implemented for UTs (User Terminals):
+Two mobility models are implemented for UTs (User Terminals) :
 - **Static Mode** : UT 位置不變。
 - **Trace-Based Mode** : UT 的位置來自**位置序列的 trace file**, 以檔案中**相鄰兩個位置點**做**線性插值（linear interpolation）**，在需要時算出中間位置。
   當 UT 走到 trace file 的最後一個位置後，UT 就停在最後位置直到模擬結束
 
-#### handover module
-可以 attach 到任何 UT。
-
-當 handover module 存在於 UT 上時 : 
+#### handover module可以 attach 到任何 UT。
 - handover module 會監控周圍 carriers 的功率
 - 當 UT 目前**鎖定的 carrier功率掉到低於預設門檻（predefined threshold）** 
 - UT 的 handover module 會向 NCC 請求授權，希望切到另一個指定的 carrier/beam

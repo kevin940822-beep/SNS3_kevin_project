@@ -1,4 +1,4 @@
-# sns3 sat-fwd-link-beam-hopping-example.cc
+# sat-fwd-link-beam-hopping-example.cc
 > Refrence
 > https://github.com/sns3/sns3-satellite/blob/master/examples/sat-fwd-link-beam-hopping-example.cc
 

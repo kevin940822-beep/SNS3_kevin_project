@@ -15,6 +15,7 @@
 - [Channel](#channel)
 - [Random access (RA) in DVB-RCS2](#random-access-ra-in-dvb-rcs2)
 - [Return link packet scheduling](#return-link-packet-scheduling)
+- [Demand Assignment Multiple Access (DAMA)](demand-assignment-multiple-access-dama)
 
 
 ## SNS3 Design
@@ -303,6 +304,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
   - **干擾評估(Interference assessment)**。
 - 如果沒有使用者資料可用，**GW** 會產生**虛擬 BBFrame (dummy BBFrames)** 來維持同步和 **連續幀傳輸(continuous frame transmission)**。
 
+---
 
 ## **NCC (Network control center)**
 **NCC (Network Control Centre)** 是專門負責**回傳鏈路（RTN）** 資源管理與調度的核心控制實體。
@@ -433,3 +435,5 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
     <p align="center"><strong>Figure 10.</strong> Six step scheduling procedure </p>
 </div>
 
+## Demand Assignment Multiple Access (DAMA)
+DAMA 在 **Request Manager (RM)** 模組中實現，根據需求 **動態評估**和**分配頻寬**。按照 **RC index (resource configuration index)** 實作，每個index都有單獨的設定。

@@ -16,6 +16,8 @@
 - [Random access (RA) in DVB-RCS2](#random-access-ra-in-dvb-rcs2)
 - [Return link packet scheduling](#return-link-packet-scheduling)
 - [Demand Assignment Multiple Access (DAMA)](demand-assignment-multiple-access-dama)
+- [UT Scheduler](#ut-scheduler)
+- [FWD Link Scheduler](#fwd-link-scheduler)
 
 
 ## SNS3 Design
@@ -458,4 +460,26 @@ DAMA 在 **Request Manager (RM)** 模組中實現，根據需求 **動態評估*
   - **UT packet queues** (user terminal)
   - **Incoming traffic rates**
   - 先前從 TBTPs (Terminal Burst Time Plans) 接收的 **DA resources**
-- CRs are modeled as **real signaling messages**, with a **probability of transmission error considered**(考慮傳送錯誤機率).
+- CRs(Capacity Request) are modeled as **real signaling messages**, with a **probability of transmission error considered**(考慮傳送錯誤機率).
+
+## UT Scheduler
+在`SatUtMac`中，依照 **NCC 下發的 TBTP**，把本地 queue 的資料放進指定的 timeslots。
+- Primary Operation :
+  The UT scheduler primarily **follows the RC (Return Channel) indices defined in the received TBTP messages**.
+
+- Exception Handling :
+  If **no packets are available in the RLE (Return Link Encapsulation) queue** for a given RC index, the UT scheduler is allowed to **freely choose another RC index to serve**, **ensuring resource efficiency and avoiding idle time slots**.
+
+The UT scheduler combines centralized guidance from NCC with local flexibility. 
+
+在正常情況下，它遵循NCC指令，但在 **TBTP 指定的 RC index 對應的 RLE encapsulator/queue 內沒有封包**，UT scheduler 有自由度選擇別的 RC index 來服務。
+
+
+## FWD Link Scheduler
+在`SatGwMac`中，負責將前向鏈路（GW → SAT → UT）的資料組織成 BBFrame，並排定下行傳送時序。
+
+- **Periodically constructs multiple Baseband (BB) frames** and **fills them with GSE (Generic Stream Encapsulation) packets from the LLC in priority order**.
+- **Assigns optimal MODCOD (Modulation and Coding) for each BB frame** based on the **UT-reported C/No** (Carrier-to-Noise ratio).
+- After each scheduling round, may **downgrade the MODCOD** to **reduce the number of required BB frames and enhance spectral efficiency(頻譜效率)**.
+
+## ARQ (Automatic Repeat reQuest)

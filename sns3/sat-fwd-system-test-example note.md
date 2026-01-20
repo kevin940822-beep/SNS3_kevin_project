@@ -218,6 +218,7 @@ Merge From <- [BBFrameTx] Time: 3.95405, Frame Type: NORMAL_FRAME, ModCod: QPSK_
 
 ---
 
+-->
 ### CRC-8 (for UP)
 
 - 如果 UPL = 0_D (continuous generic stream)連續位元流，CRC-8 encoder 不做任何事，直接把資料往下送。

@@ -18,6 +18,7 @@
 - [Demand Assignment Multiple Access (DAMA)](demand-assignment-multiple-access-dama)
 - [UT Scheduler](#ut-scheduler)
 - [FWD Link Scheduler](#fwd-link-scheduler)
+- [ARQ (Automatic Repeat reQuest)](#arq-automatic-repeat-request)
 
 
 ## SNS3 Design
@@ -402,7 +403,7 @@ queue 有資料 → **SatRequestManager** 依規則產生 CR（RBDC/VBDC）→ N
 由於 payload 小，只用於**control messages**。
 **control messages** 包含：
 - **Capacity Request (CR)**
-- **ARQ ACK** control messages
+- [**ARQ ACK** control messages](#arq-automatic-repeat-request)
 
 ### MARSALA Enhancement
 
@@ -483,3 +484,12 @@ The UT scheduler combines centralized guidance from NCC with local flexibility.
 - After each scheduling round, may **downgrade the MODCOD** to **reduce the number of required BB frames and enhance spectral efficiency(頻譜效率)**.
 
 ## ARQ (Automatic Repeat reQuest)
+ARQ 是在回傳鏈路（RTN）上的一種**資料層可靠傳輸機制**，用來在錯誤發生時要求重傳 burst，採用**Stop-and-Wait ARQ**，操作於[Slotted ALOHA]((#random-access-ra-in-dvb-rcs2))
+
+ARQ 不再 DVB-RCS2 官方規範內，
+
+出於研究目的，衛星模組中實現了 **Selective Repeat ARQ mechanism**
+
+ARQ **operates at the LLC layer**, and supports retransmissions for :\
+- FWD link: using **GSE(Generic Stream Encapsulation) packets** 
+- RTN link: using **RLE(Return Link Encapsulation) packets**

@@ -4,6 +4,7 @@
 # Table of Contents 
 - [Table of Contents](#table-of-contents)
 - [Step](#step)
+  - [Output](#output)
 - [BBframe 結構](#bbframe-結構)
   - [BBHEADER](#bbheader)
   - [BBframe Tx](#bbframe-tx)
@@ -34,12 +35,12 @@ cd ~/workspace/bake/source/ns-3.43
 ```
 ./ns3 run sat-fwd-system-test-example -- --testCase=0 --gwEndUsers=2 --simLength=4 --traceFrameInfo=false --traceMergeInfo=false --beamId=26 --trafficModel=cbr --senderAppStartTime=100ms 
 ```
-### Output
+## Output
 <img width="212" height="263" alt="image" src="https://github.com/user-attachments/assets/63cf4d64-809c-4a32-860f-937feeec4e7a" />
 
-[Output with `--traceFrameInfo=true --traceMergeInfo=false `](#bbframe-tx)
+`--traceFrameInfo=true --traceMergeInfo=false `[Output](#bbframe-tx)
 
-[Output with `--traceFrameInfo=false --traceMergeInfo=true`](#bbframe-merge)
+`--traceFrameInfo=false --traceMergeInfo=true` [Output](#bbframe-merge)
 
 **主要內容在BBframe，因為將**
 `--traceFrameInfo`  `--traceMergeInfo`
@@ -156,7 +157,7 @@ BBFrame 包含三個主要部分：
 
 `Frame Type: DUMMY_FRAME` : 代表此時還未有資料要送，但PHY 時序仍需維持
 
-### BBFrame Tx
+## BBFrame Tx
 ```
 --traceFrameInfo=true --traceMergeInfo=false
 ```
@@ -179,7 +180,7 @@ BBframe Tx會將每一個封包所抵達的目的做一次紀錄，所以在Outp
 
 
 
-### BBFrame Merge
+## BBFrame Merge
 ```
 --traceFrameInfo=false --traceMergeInfo=true
 ```

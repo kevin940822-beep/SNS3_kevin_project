@@ -4,7 +4,7 @@
 # Table of Contents 
 - [Table of Contents](#table-of-contents)
 - [Step](#step)
-  - [Output](#output)
+  - [Output](#output-1)
 - [BBframe 結構](#bbframe-結構)
   - [BBHEADER](#bbheader)
   - [BBframe Tx](#bbframe-tx)

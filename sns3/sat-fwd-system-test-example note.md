@@ -36,6 +36,7 @@ cd ~/workspace/bake/source/ns-3.43
 ./ns3 run sat-fwd-system-test-example -- --testCase=0 --gwEndUsers=2 --simLength=4 --traceFrameInfo=false --traceMergeInfo=false --beamId=26 --trafficModel=cbr --senderAppStartTime=100ms 
 ```
 ## Output
+
 <img width="212" height="263" alt="image" src="https://github.com/user-attachments/assets/63cf4d64-809c-4a32-860f-937feeec4e7a" />
 
 `--traceFrameInfo=true --traceMergeInfo=false `[Output](#bbframe-tx)
@@ -45,6 +46,10 @@ cd ~/workspace/bake/source/ns-3.43
 **主要內容在BBframe，因為將**
 `--traceFrameInfo`  `--traceMergeInfo`
 **設為false，所以才沒有輸出內容**
+
+<img width="477" height="206" alt="image" src="https://github.com/user-attachments/assets/f68f5186-3330-49c5-969c-8b0ac1c48502" />
+
+DUMMY_FRAME : 代表還沒有資料要傳，但必須維持同步時序，所以生成虛擬幀
 
 ---
 

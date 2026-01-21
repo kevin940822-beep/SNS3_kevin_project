@@ -37,6 +37,10 @@ cd ~/workspace/bake/source/ns-3.43
 ### Output
 <img width="212" height="263" alt="image" src="https://github.com/user-attachments/assets/63cf4d64-809c-4a32-860f-937feeec4e7a" />
 
+[Output with `--traceFrameInfo=true --traceMergeInfo=false `](#bbframe-tx)
+
+[Output with `--traceFrameInfo=false --traceMergeInfo=true`](#bbframe-merge)
+
 **主要內容在BBframe，因為將**
 `--traceFrameInfo`  `--traceMergeInfo`
 **設為false，所以才沒有輸出內容**

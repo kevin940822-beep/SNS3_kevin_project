@@ -23,7 +23,7 @@ cd ~/workspace/bake/source/ns-3.43
 
 | 參數名稱 | 預設值      | 參數用途說明 |
 | ---| ---| ---|
-| `--testCase`            | `0`| 指定要執行的測試案例（Test case）。<br>• `0`：啟用 scheduler、**ACM 關閉**<br>• `1`：啟用 scheduler、**ACM 開啟**<br>• `2`：**ACM 模式**，僅模擬 **單一 UT（User Terminal）** |
+| `--testCase`            | `0`| 指定要執行的測試案例（Test case）。<br>• `0`：啟用 scheduler、**ACM 關閉**<br>• `1`：啟用 scheduler、**ACM 開啟**<br>• `2`：**ACM 模式**， **Markov 衰落模型** ＋ **外部衰落 Trace** ＋ **gwEndUsers = 1** (驗證 ACM 在真實通道下的行為) |
 | `--gwEndUsers`         | `10`     | Gateway（GW）端所連接的 **終端使用者數量**。<br>在 FWD 中，代表 GW 同時向多少個使用者發送資料流量。                                 |
 | `--simLength`          | `40`     | 模擬總時間長度（通常單位為 **秒**）。<br>控制整個 ns-3 模擬執行多久。                                                              |
 | `--traceFrameInfo`     | `false`  | 是否輸出 **BBFRAME（Baseband Frame）詳細資訊**。<br>• `true`：列印每個 BB frame 的資訊（用於除錯與分析）<br>• `false`：不輸出      |

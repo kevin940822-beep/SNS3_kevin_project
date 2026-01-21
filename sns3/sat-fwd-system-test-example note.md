@@ -259,8 +259,8 @@ Merge From <- [BBFrameTx] Time: 3.95405, Frame Type: NORMAL_FRAME, ModCod: QPSK_
 ## flowchart
 
 <div align="center">
-<img width="487" height="1002" alt="image" src="https://github.com/user-attachments/assets/631bbbaf-7ea9-448b-8a25-ba40967beed4" />
-<img width="487" height="857" alt="image" src="https://github.com/user-attachments/assets/51726b2a-0922-41a0-977a-939ac44287cc" />
+<img width="602" height="1071" alt="螢幕擷取畫面 2026-01-21 124401" src="https://github.com/user-attachments/assets/e5d5edc6-02a9-4df0-b0bd-f70036bd2f02" />
+<img width="451" height="1069" alt="螢幕擷取畫面 2026-01-21 124418" src="https://github.com/user-attachments/assets/daf2549f-073a-43ae-958e-06e2d22792ff" />
 </div>
 <p align="center"><strong>Figure 1.</strong> FWD flowchart </p>
 

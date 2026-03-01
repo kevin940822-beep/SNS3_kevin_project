@@ -45,3 +45,4 @@ mkdir -p results/leocon-exp1
 cd ~/workspace/bake/source/ns-3.43/results/leocon-exp1
 ls
 ```
+<img width="1464" height="820" alt="image" src="https://github.com/user-attachments/assets/8db817e0-88de-47d0-9882-c3187e3decad" />

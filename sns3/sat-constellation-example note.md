@@ -24,7 +24,7 @@ cd ~/workspace/bake/source/ns-3.43
 若要使用LEO環境，可以先透過程式碼修改，也可以透過指令修改
 
 
-[code](https://github.com/sns3/sns3-satellite/blob/master/examples/sat-constellation-example.cc) Line 48
+[code](https://github.com/sns3/sns3-satellite/blob/master/examples/sat-constellation-example.cc) Line 48 將
 
 ```
 std::string scenarioFolder = "constellation-eutelsat-geo-2-sats-isls";
@@ -32,4 +32,16 @@ std::string scenarioFolder = "constellation-eutelsat-geo-2-sats-isls";
 修改為
 ```
 std::string scenarioFolder = "constellation-leo-2-satellites";
+```
+
+### 執行程式碼
+```
+mkdir -p results/leocon-exp1                                      
+./ns3 run sat-constellation-example -- --OutputPath=results/leocon-exp1
+```
+
+### 察看結果檔
+```
+cd ~/workspace/bake/source/ns-3.43/results/leocon-exp1
+ls
 ```

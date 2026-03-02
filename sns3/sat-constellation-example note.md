@@ -86,33 +86,35 @@ Satellites                                          # 模擬中的衛星列表
 ```
 ### 2.GWs
 ```
-GW: ID = 2, at 17.69,101.62,0
+GWs                                                 # Ground stations (Gateways) 資訊
+  GW: ID = 2, at 17.69,101.62,0                     # Gateway with ID=2，座標 (緯度, 經度 ,高度)
   Devices 
-    02-06-00:00:00:00:00:08, sat: 0, beam: 43
-    02-06-00:00:00:00:00:1f, sat: 1, beam: 43
-  GW: ID = 3, at 15.93,96.54,-9.31323e-10
+    02-06-00:00:00:00:00:08, sat: 0, beam: 43       # 介面 MAC 位址為 08。目前正與 SAT0 透過 beam 43 連接。
+    02-06-00:00:00:00:00:1f, sat: 1, beam: 43       # 介面 MAC 位址為 1f。目前正與 SAT1 透過 beam 43 連接。
+  GW: ID = 3, at 15.93,96.54,-9.31323e-10           # Gateway with ID=3，座標 (緯度, 經度 ,高度)
   Devices 
-    02-06-00:00:00:00:00:05, sat: 0, beam: 30
-    02-06-00:00:00:00:00:11, sat: 1, beam: 30
+    02-06-00:00:00:00:00:05, sat: 0, beam: 30       # 介面 MAC 位址為 05。目前正與 SAT0 透過 beam 30 連接。
+    02-06-00:00:00:00:00:11, sat: 1, beam: 30       # 介面 MAC 位址為 11。目前正與 SAT1 透過 beam 30 連接。
 ```
 
 ### 3.UTs
 ```
-UT: ID = 4, at 20,110,0
+UTs                                                    # User Terminals (UT) 資訊
+  UT: ID = 4, at 20,110,0                              # User Terminal with ID=4，座標 (緯度, 經度 ,高度)
   Devices 
-    02-06-00:00:00:00:00:12, sat: 1, beam: 30. Linked to GW 02-06-00:00:00:00:00:05
-  UT: ID = 5, at 21,111,0
+    02-06-00:00:00:00:00:12, sat: 1, beam: 30. Linked to GW 02-06-00:00:00:00:00:05    # UT MAC 位址為 :12，透過beam 30 連線至 SAT 1 。連線到 GW 3 (MAC :05)
+  UT: ID = 5, at 21,111,0                              # User Terminal with ID=5，座標 (緯度, 經度 ,高度)
   Devices 
-    02-06-00:00:00:00:00:13, sat: 1, beam: 30. Linked to GW 02-06-00:00:00:00:00:05
-  UT: ID = 10, at 18,115,0
+    02-06-00:00:00:00:00:13, sat: 1, beam: 30. Linked to GW 02-06-00:00:00:00:00:05    # UT MAC 位址為 :13，透過beam 30 連線至 SAT 1 。連線到 GW 3 (MAC :05)
+  UT: ID = 10, at 18,115,0                             # User Terminal with ID=10，座標 (緯度, 經度 ,高度)
   Devices 
-    02-06-00:00:00:00:00:20, sat: 1, beam: 43. Linked to GW 02-06-00:00:00:00:00:08
-  UT: ID = 11, at 19,110,9.31323e-10
+    02-06-00:00:00:00:00:20, sat: 1, beam: 43. Linked to GW 02-06-00:00:00:00:00:08    # UT MAC 位址為 :20，透過beam 43 連線至 SAT 1 。連線到 GW 2 (MAC :08)
+  UT: ID = 11, at 19,110,9.31323e-10                   # User Terminal with ID=11，座標 (緯度, 經度 ,高度)
   Devices 
-    02-06-00:00:00:00:00:21, sat: 1, beam: 43. Linked to GW 02-06-00:00:00:00:00:08
-  UT: ID = 12, at 15,120,0
+    02-06-00:00:00:00:00:21, sat: 1, beam: 43. Linked to GW 02-06-00:00:00:00:00:08    # UT MAC 位址為 :21，透過beam 43 連線至 SAT 1 。連線到 GW 2 (MAC :08)
+  UT: ID = 12, at 15,120,0                             # User Terminal with ID=12，座標 (緯度, 經度 ,高度)
   Devices 
-    02-06-00:00:00:00:00:22, sat: 1, beam: 43. Linked to GW 02-06-00:00:00:00:00:08
+    02-06-00:00:00:00:00:22, sat: 1, beam: 43. Linked to GW 02-06-00:00:00:00:00:08    # UT MAC 位址為 :22，透過beam 43 連線至 SAT 1 。連線到 GW 2 (MAC :08)
 ```
 
 ### 4.GW users & UT users
@@ -133,7 +135,9 @@ UT users
   GW user: ID = 17
   GW user: ID = 18
 ```
-
+- GW users (IDs 20-22) → 代表GW的終端主機應用程式。
+- UT users (IDs 6-18) →  代表UT的終端主機應用程式。
+- 這些 ID 並非實體設備，而是**邏輯應用程式節點(logical application nodes)**。
 
 ### 察看結果檔
 ```

@@ -36,6 +36,8 @@ std::string scenarioFolder = "constellation-eutelsat-geo-2-sats-isls";
 std::string scenarioFolder = "constellation-leo-2-satellites";
 ```
 
+> Refrence : https://github.com/sns3/sns3-data/tree/master/scenarios
+
 ---
 
 ### 執行程式碼

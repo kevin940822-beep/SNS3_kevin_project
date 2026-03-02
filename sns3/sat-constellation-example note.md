@@ -4,7 +4,7 @@
 # Table of Contents 
 - [Table of Contents](#table-of-contents)
 - [Step](#step)
-
+- [修改LEO環境](#修改leo環境)
 
 ## Step
 ```
@@ -21,8 +21,10 @@ cd ~/workspace/bake/source/ns-3.43
 | `--scenarioFolder`          | `constellation-eutelsat-geo-2-sats-isls`     | Scenario folder (e.g. constellation-eutelsat-geo-2-sats-isls) [constellation-leo-2-satellites]     |
 | ` --OutputPath`     |  未指定 | 指定輸出統計檔案的資料夾   |
 
-若要使用LEO環境，可以先透過程式碼修改，也可以透過指令修改
 
+## 修改LEO環境
+
+*若要使用LEO環境，可以透過程式碼修改，也可以透過參數修改*
 
 [code](https://github.com/sns3/sns3-satellite/blob/master/examples/sat-constellation-example.cc) Line 48 將
 
@@ -33,6 +35,8 @@ std::string scenarioFolder = "constellation-eutelsat-geo-2-sats-isls";
 ```
 std::string scenarioFolder = "constellation-leo-2-satellites";
 ```
+
+---
 
 ### 執行程式碼
 ```

@@ -173,6 +173,13 @@ ls
 |rtn throughput|<img width="644" height="568" alt="image" src="https://github.com/user-attachments/assets/3f1bd68d-d35a-4833-9721-8c216740e34f" />|<img width="639" height="563" alt="image" src="https://github.com/user-attachments/assets/90cc48d4-aae5-484b-8c5c-fbd5c7648fb5" />|
 
 
+- fwd 與 rtn throughput 不一樣？
+  - 衛星為 **Regeneration Mode** 
+  - 兩者的 **編碼調變（MODCOD）** 不同
+  - 開啟 **ACM**，會獨立調整各自的傳輸速率。
+- 受到**ISL固定頻寬**影響。(此模擬為100Mb/s)
+- **LEO fwd**在75秒時連線中斷。(衛星飛出通訊範圍)
+
 ## flowchart
 <img width="566" height="741" alt="image" src="https://github.com/user-attachments/assets/977e9fdd-e90f-4ffc-b2d0-c50a87307858" />
 

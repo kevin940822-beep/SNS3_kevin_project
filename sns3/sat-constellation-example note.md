@@ -4,6 +4,7 @@
 # Table of Contents 
 - [Step](#step)
 - [修改LEO環境](#修改leo環境)
+- [LEO vs GEO](#leo-vs-geo)
 
 ## Step
 ```
@@ -164,17 +165,7 @@ cd ~/workspace/bake/source/ns-3.43/results/leocon-exp1
 ls
 ```
 
-
-
-
-
-
-
-
-
-
-
-
+## LEO vs GEO
 |item|LEO|GEO|
 |---|---|---|
 |fwd throughput|<img width="648" height="569" alt="image" src="https://github.com/user-attachments/assets/ebcb9a0e-057f-4626-a206-c134a87ac18f" />|<img width="646" height="568" alt="image" src="https://github.com/user-attachments/assets/f5fb3c01-e9bc-4844-bcbc-e2b6c3cb65b7" />|

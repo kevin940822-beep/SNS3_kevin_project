@@ -139,6 +139,20 @@ UT users
 - UT users (IDs 6-18) →  代表UT的終端主機應用程式。
 - 這些 ID 並非實體設備，而是**邏輯應用程式節點(logical application nodes)**。
 
+### SatIdMapper GW/UT MAC to satellite ID map
+```
+00:00:00:00:00:05 0
+00:00:00:00:00:08 0
+00:00:00:00:00:11 0
+00:00:00:00:00:12 1
+00:00:00:00:00:13 1
+00:00:00:00:00:1f 0
+00:00:00:00:00:20 1
+00:00:00:00:00:21 1
+00:00:00:00:00:22 1
+```
+
+
 ### 察看結果檔
 ```
 cd ~/workspace/bake/source/ns-3.43/results/leocon-exp1

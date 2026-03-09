@@ -73,8 +73,8 @@ Satellites                                          # 模擬中的衛星列表
         Feeder at 02-06-00:00:00:00:00:0f, beam 30  # Feeder Terminal 在位址結尾為 0f ，使用beam 30
         Feeder at 02-06-00:00:00:00:00:1d, beam 43  # Feeder Terminal 在位址結尾為 1d ，使用beam 43
       Feeder connected to                           # 連接 Feeder Link 的節點
-        User at 02-06-00:00:00:00:00:10, beam 30    # beam 30 覆蓋的用戶 :10
-        User at 02-06-00:00:00:00:00:1e, beam 43    # beam 43 覆蓋的用戶 :1e
+        User at 02-06-00:00:00:00:00:10, beam 30    # User Terminal 在位址結尾為 10，使用 beam 30
+        User at 02-06-00:00:00:00:00:1e, beam 43    # User Terminal 在位址結尾為 1e，使用 beam 43
       User connected to                             # 連接到 SAT 1 User Link的終端設備 MAC 列表。
         00:00:00:00:00:12                           
         00:00:00:00:00:13

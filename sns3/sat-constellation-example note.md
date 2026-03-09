@@ -151,7 +151,7 @@ UT users
 00:00:00:00:00:22 1
 ```
 
-<img width="1617" height="753" alt="image" src="https://github.com/user-attachments/assets/96b862b3-4da5-406f-9280-eef14152b625" />
+<img width="1623" height="756" alt="image" src="https://github.com/user-attachments/assets/70d48b54-7873-4759-bb03-5a578a015b70" />
 
 
 
@@ -163,7 +163,7 @@ UT users
 cd ~/workspace/bake/source/ns-3.43/results/leocon-exp1
 ls
 ```
-<img width="1464" height="820" alt="image" src="https://github.com/user-attachments/assets/8db817e0-88de-47d0-9882-c3187e3decad" />
+
 
 
 

@@ -199,7 +199,8 @@ ls
 
 
 ## flowchart
-<img width="566" height="741" alt="image" src="https://github.com/user-attachments/assets/977e9fdd-e90f-4ffc-b2d0-c50a87307858" />
+<img width="822" height="852" alt="image" src="https://github.com/user-attachments/assets/09697f40-c516-4ccd-8a7c-027241dd6a27" />
+
 
 
 # 試著將LEO環境換成constellation-telesat-351-sats

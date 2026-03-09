@@ -187,8 +187,13 @@ ls
 以及將ISL改為500Mb/s
 
 看是否可以得到三角形輸出曲線
+- ISL 500Mb/s
+- ACM disable
+- 模擬時間120s
 
-
+|item|LEO|GEO|
+|---|---|---|
+||||
 
 ## flowchart
 <img width="566" height="741" alt="image" src="https://github.com/user-attachments/assets/977e9fdd-e90f-4ffc-b2d0-c50a87307858" />

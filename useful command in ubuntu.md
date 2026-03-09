@@ -28,6 +28,10 @@ mkdir -p results/leocon-exp1
 ./ns3 run sat-constellation-example -- --OutputPath=results/leocon-exp1
 ```
 
+### 刪除資料夾
+```
+rm -rf 資料夾名稱
+```
 ### Install chrome
 ```
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb

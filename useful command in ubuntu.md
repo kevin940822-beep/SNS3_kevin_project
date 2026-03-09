@@ -1,8 +1,10 @@
 # TOC
 - [TOC](#toc)
 - [前往example](#前往example)
+- [結果檔位置](#結果檔位置)
 - [使用python畫圖](#使用python畫圖)
 - [創建資料夾](#創建資料夾)
+- [刪除資料夾](#刪除資料夾)
 - [Install](#install-chrome)
   - [chrome](#install-chrome)
   - [discord](#install-discord)
@@ -16,6 +18,11 @@ cd ~/workspace/bake/source/ns-3.43/contrib/satellite/examples
 則可以直接cd examples
 
 也可以pwd查看現在位置
+```
+
+### 結果檔位置
+```
+cd ~/workspace/bake/source/ns-3.43/results
 ```
 ### 使用python畫圖
 ```

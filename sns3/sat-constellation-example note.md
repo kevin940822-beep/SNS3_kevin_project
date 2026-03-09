@@ -5,6 +5,7 @@
 - [Step](#step)
 - [修改LEO環境](#修改leo環境)
 - [LEO vs GEO](#leo-vs-geo)
+- [flowchart](#flowchart)
 
 ## Step
 ```
@@ -171,3 +172,6 @@ ls
 |fwd throughput|<img width="648" height="569" alt="image" src="https://github.com/user-attachments/assets/ebcb9a0e-057f-4626-a206-c134a87ac18f" />|<img width="646" height="568" alt="image" src="https://github.com/user-attachments/assets/f5fb3c01-e9bc-4844-bcbc-e2b6c3cb65b7" />|
 |rtn throughput|<img width="644" height="568" alt="image" src="https://github.com/user-attachments/assets/3f1bd68d-d35a-4833-9721-8c216740e34f" />|<img width="639" height="563" alt="image" src="https://github.com/user-attachments/assets/90cc48d4-aae5-484b-8c5c-fbd5c7648fb5" />|
 
+
+## flowchart
+<img width="575" height="747" alt="image" src="https://github.com/user-attachments/assets/85df9816-1b1d-4da5-ba76-c2a434795caf" />

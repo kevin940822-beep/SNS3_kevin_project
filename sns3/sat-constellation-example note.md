@@ -2,7 +2,6 @@
 > refrence : https://github.com/sns3/sns3-satellite/blob/master/examples/sat-constellation-example.cc
 
 # Table of Contents 
-- [Table of Contents](#table-of-contents)
 - [Step](#step)
 - [修改LEO環境](#修改leo環境)
 

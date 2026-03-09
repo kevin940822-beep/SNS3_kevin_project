@@ -8,6 +8,8 @@
   - [chrome](#install-chrome)
   - [discord](#install-discord)
 
+## 沒有要使用wireshark看封包，將程式碼中 PacketTraceEnabled 改為 false
+
 ### 前往example
 ```
 cd ~/workspace/bake/source/ns-3.43/contrib/satellite/examples

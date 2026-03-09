@@ -193,8 +193,13 @@ ls
 
 |item|LEO|GEO|
 |---|---|---|
-||||
+|fwd throughput||<img width="640" height="567" alt="image" src="https://github.com/user-attachments/assets/2b72c2c8-2ba1-4ba0-a491-4143c2b63d01" />|
+|rtn throughput||<img width="641" height="563" alt="image" src="https://github.com/user-attachments/assets/7a57fdfb-73c7-4758-8e58-6497c4ba6ccc" />|
+
+
 
 ## flowchart
 <img width="566" height="741" alt="image" src="https://github.com/user-attachments/assets/977e9fdd-e90f-4ffc-b2d0-c50a87307858" />
 
+
+# 試著將LEO環境換成constellation-telesat-351-sats

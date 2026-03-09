@@ -1,5 +1,4 @@
 # TOC
-- [TOC](#toc)
 - [前往example](#前往example)
 - [結果檔位置](#結果檔位置)
 - [使用python畫圖](#使用python畫圖)

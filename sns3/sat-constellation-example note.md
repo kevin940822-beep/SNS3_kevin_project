@@ -180,6 +180,12 @@ ls
 - 受到**ISL固定頻寬**影響。(此模擬為100Mb/s)
 - **LEO fwd**在75秒時連線中斷。(衛星飛出通訊範圍)
 
+
+## ACM off ISL 500Mb/s
+
+
+
+
 ## flowchart
 <img width="566" height="741" alt="image" src="https://github.com/user-attachments/assets/977e9fdd-e90f-4ffc-b2d0-c50a87307858" />
 

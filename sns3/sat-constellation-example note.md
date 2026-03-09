@@ -174,4 +174,5 @@ ls
 
 
 ## flowchart
-<img width="575" height="747" alt="image" src="https://github.com/user-attachments/assets/85df9816-1b1d-4da5-ba76-c2a434795caf" />
+<img width="566" height="741" alt="image" src="https://github.com/user-attachments/assets/977e9fdd-e90f-4ffc-b2d0-c50a87307858" />
+

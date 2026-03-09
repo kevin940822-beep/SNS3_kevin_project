@@ -151,7 +151,7 @@ UT users
 00:00:00:00:00:21 1
 00:00:00:00:00:22 1
 ```
-![Uploading image.png…]()
+<img width="648" height="569" alt="image" src="https://github.com/user-attachments/assets/ebcb9a0e-057f-4626-a206-c134a87ac18f" />
 
 
 
@@ -163,5 +163,11 @@ ls
 <img width="1464" height="820" alt="image" src="https://github.com/user-attachments/assets/8db817e0-88de-47d0-9882-c3187e3decad" />
 
 
-<img width="647" height="569" alt="image" src="https://github.com/user-attachments/assets/0a105803-2885-4fcd-96d2-e6efe8abe221" />
+
+
+<img width="644" height="568" alt="image" src="https://github.com/user-attachments/assets/77fd4b5f-7d09-4652-aed0-283797b20f38" />
+
+<img width="644" height="568" alt="image" src="https://github.com/user-attachments/assets/3f1bd68d-d35a-4833-9721-8c216740e34f" />
+
+
 

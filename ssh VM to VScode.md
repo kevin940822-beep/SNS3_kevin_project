@@ -27,8 +27,15 @@ name : Remote - SSH
 ```
 
 ### ssh your VM to VScode
+
+- Click the icon `< >` in the bottom left corner of VS Code.
+  - choose `connect to host`
+  - choose `Add New SSH Host`
+  - Enter connection command
 ```
 ssh "your VM account"@127.0.0.1 -p 2222
 ```
-- choose `Linux`
+- choose `C:\Users\User name\.ssh\config`
+- click `connect` in the bottom right corner of VS Code.
 - Enter your VM password
+- choose `Open Folder` on the left side

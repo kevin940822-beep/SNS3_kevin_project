@@ -1,5 +1,5 @@
 # TOC
-- [Step](#steo)
+- [Step](#step)
 
 ## Step 
 
@@ -8,9 +8,12 @@
 sudo apt update
 sudo apt install openssh-server
 ```
+
 ### Go to **VM's** **setting** -> **Network**
 
-choose **NAT**, **連接埠轉送 (Port Forwarding)**
+choose **NAT** , **連接埠轉送 (Port Forwarding)**
+
+<img width="688" height="374" alt="image" src="https://github.com/user-attachments/assets/f7d02cd6-60fe-4386-b0ea-a25dfdab77cc" />
 
 ```
 name : ssh
@@ -20,10 +23,12 @@ name : ssh
 
 ### Install extensions in VS Code
 ```
-Remote - SSH
+name : Remote - SSH
 ```
 
 ### ssh your VM to VScode
 ```
 ssh "your VM account"@127.0.0.1 -p 2222
 ```
+- choose `Linux`
+- Enter your VM password

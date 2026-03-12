@@ -39,3 +39,5 @@ ssh "your VM account"@127.0.0.1 -p 2222
 - click `connect` in the bottom right corner of VS Code.
 - Enter your VM password
 - choose `Open Folder` on the left side
+- Locate `examples` folder
+- Enter your VM password

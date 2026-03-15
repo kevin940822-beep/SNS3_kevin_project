@@ -11,7 +11,7 @@ sudo apt install openssh-server
 
 ### Go to **VM's** **setting** -> **Network**
 
-choose **NAT** , **連接埠轉送 (Port Forwarding)**
+choose **NAT** -> **連接埠轉送 (Port Forwarding)**
 
 <img width="688" height="374" alt="image" src="https://github.com/user-attachments/assets/f7d02cd6-60fe-4386-b0ea-a25dfdab77cc" />
 

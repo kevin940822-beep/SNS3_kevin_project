@@ -7,6 +7,7 @@
 - [Install](#install-chrome)
   - [chrome](#install-chrome)
   - [discord](#install-discord)
+- [check storage space](#check-storage-space)
 
 ## 沒有要使用wireshark看封包，將程式碼中 PacketTraceEnabled 改為 false
 
@@ -50,4 +51,9 @@ sudo apt install ./google-chrome-stable_current_amd64.deb -y
 ```
 wget -O discord.deb "https://discord.com/api/download?platform=linux&format=deb"
 sudo apt install ./discord.deb -y
+```
+
+### check storage space
+```
+du -sh ~/* | sort -h
 ```

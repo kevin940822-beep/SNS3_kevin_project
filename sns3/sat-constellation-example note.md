@@ -181,22 +181,6 @@ ls
 - **LEO fwd**在75秒時連線中斷。(衛星飛出通訊範圍)
 
 
-## ACM off ISL 500Mb/s
-測試ACM對模擬的影響
-
-以及將ISL改為500Mb/s
-
-看是否可以得到三角形輸出曲線
-- ISL 500Mb/s
-- ACM disable
-- 模擬時間120s
-
-|item|LEO|GEO|
-|---|---|---|
-|fwd throughput||<img width="640" height="567" alt="image" src="https://github.com/user-attachments/assets/2b72c2c8-2ba1-4ba0-a491-4143c2b63d01" />|
-|rtn throughput||<img width="641" height="563" alt="image" src="https://github.com/user-attachments/assets/7a57fdfb-73c7-4758-8e58-6497c4ba6ccc" />|
-
-
 
 ## flowchart
 <img width="822" height="852" alt="image" src="https://github.com/user-attachments/assets/09697f40-c516-4ccd-8a7c-027241dd6a27" />

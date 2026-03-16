@@ -43,8 +43,8 @@ std::string scenarioFolder = "constellation-leo-2-satellites";
 
 ### 執行程式碼
 ```
-mkdir -p results/leocon-exp1                                      
-./ns3 run sat-constellation-example -- --OutputPath=results/leocon-exp1
+mkdir -p results/leocon-ex1                                      
+./ns3 run sat-constellation-example -- --OutputPath=results/leocon-ex1
 ```
 ### Output
 

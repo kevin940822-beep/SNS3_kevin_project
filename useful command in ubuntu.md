@@ -56,4 +56,8 @@ sudo apt install ./discord.deb -y
 ### check storage space
 ```
 du -sh ~/* | sort -h
+
+or
+
+lsblk
 ```

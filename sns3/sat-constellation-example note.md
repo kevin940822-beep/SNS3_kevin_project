@@ -166,6 +166,14 @@ cd ~/workspace/bake/source/ns-3.43/results/leocon-exp1
 ls
 ```
 
+```
+per-sat-fwd-app-throughput-scatter-1.txt
+per-sat-fwd-app-throughput-scatter-2.txt
+per-sat-rtn-app-throughput-scatter-1.txt
+per-sat-rtn-app-throughput-scatter-2.txt
+```
+
+
 ## LEO vs GEO
 |item|LEO|GEO|
 |---|---|---|

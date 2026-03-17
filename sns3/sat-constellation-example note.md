@@ -196,3 +196,13 @@ per-sat-rtn-app-throughput-scatter-2.txt
 
 
 # 試著將LEO環境換成constellation-telesat-351-sats
+
+
+
+<img width="1835" height="166" alt="image" src="https://github.com/user-attachments/assets/d4742993-32a4-4408-876d-60ea44c819c4" />
+
+test.py只有505個
+
+sat constellation跑不過
+
+

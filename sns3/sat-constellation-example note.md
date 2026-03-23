@@ -9,7 +9,7 @@
 
 ## Step
 ```
-cd ~/workspace/bake/source/ns-3.43
+cd ns-3.43
 ./ns3 run "sat-constellation-example --PrintHelp"
 ```
 ### Output
@@ -162,24 +162,24 @@ UT users
 
 ### 察看結果檔
 ```
-cd ~/workspace/bake/source/ns-3.43/results/leocon-exp1
+cd ~/ns-3.43/results/leocon-exp1
 ls
 ```
 
-```
-per-sat-fwd-app-throughput-scatter-1.txt
-per-sat-fwd-app-throughput-scatter-2.txt
-per-sat-rtn-app-throughput-scatter-1.txt
-per-sat-rtn-app-throughput-scatter-2.txt
-```
+### **satellite throughput**
 
-
-## LEO vs GEO
-|item|LEO|GEO|
+|item|SAT0|SAT1|
 |---|---|---|
-|fwd throughput|<img width="648" height="569" alt="image" src="https://github.com/user-attachments/assets/ebcb9a0e-057f-4626-a206-c134a87ac18f" />|<img width="646" height="568" alt="image" src="https://github.com/user-attachments/assets/f5fb3c01-e9bc-4844-bcbc-e2b6c3cb65b7" />|
-|rtn throughput|<img width="644" height="568" alt="image" src="https://github.com/user-attachments/assets/3f1bd68d-d35a-4833-9721-8c216740e34f" />|<img width="639" height="563" alt="image" src="https://github.com/user-attachments/assets/90cc48d4-aae5-484b-8c5c-fbd5c7648fb5" />|
+|**RTN**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/b66cf99c-cab4-411d-ad05-939b2f01020b" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/e5a3c1b8-c5a0-4997-88cc-6e8530a241f3" />|
+|**FWD**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/1d4152ec-6b72-4cba-b67c-3da4109de54d" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/bc582ef4-66a8-42fc-a28b-6e27cf112323" />|
 
+
+### **per-beam throughput**
+
+|item|SAT0|SAT1|
+|---|---|---|
+|**RTN**|<img width="3068" height="1945" alt="image" src="https://github.com/user-attachments/assets/6a22fd7f-92d8-4898-aa35-93e38905c420" />|<img width="3046" height="1945" alt="image" src="https://github.com/user-attachments/assets/aee4b65e-bfa5-4fc4-a73c-cff4cf83c13e" />|
+|**FWD**|<img width="3068" height="1945" alt="image" src="https://github.com/user-attachments/assets/b88530b0-3049-4708-b083-91b310b154b9" />|<img width="3046" height="1945" alt="image" src="https://github.com/user-attachments/assets/30d07178-4aab-4418-8a4d-d2191af8f495" />|
 
 - fwd 與 rtn throughput 不一樣？
   - 衛星為 **Regeneration Mode** 
@@ -197,15 +197,5 @@ per-sat-rtn-app-throughput-scatter-2.txt
 
 # 試著將LEO環境換成constellation-telesat-351-sats
 
-
-
-<img width="1835" height="166" alt="image" src="https://github.com/user-attachments/assets/d4742993-32a4-4408-876d-60ea44c819c4" />
-
-
-遇到的問題： 
-
-test.py測試程式只有505個
-
-模擬跑不過，找不到衛星環境
 
 

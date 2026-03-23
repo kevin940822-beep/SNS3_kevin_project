@@ -4,7 +4,7 @@
 # Table of Contents 
 - [Step](#step)
 - [修改LEO環境](#修改leo環境)
-- [LEO vs GEO](#leo-vs-geo)
+- [Output](#satellite-throughput)
 - [flowchart](#flowchart)
 
 ## Step

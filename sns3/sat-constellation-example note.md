@@ -181,7 +181,10 @@ ls
 |**RTN**|<img width="3068" height="1945" alt="image" src="https://github.com/user-attachments/assets/6a22fd7f-92d8-4898-aa35-93e38905c420" />|<img width="3046" height="1945" alt="image" src="https://github.com/user-attachments/assets/aee4b65e-bfa5-4fc4-a73c-cff4cf83c13e" />|
 |**FWD**|<img width="3068" height="1945" alt="image" src="https://github.com/user-attachments/assets/b88530b0-3049-4708-b083-91b310b154b9" />|<img width="3046" height="1945" alt="image" src="https://github.com/user-attachments/assets/30d07178-4aab-4418-8a4d-d2191af8f495" />|
 
-
+**造成只有SAT1有流量的原因**
+- UT位置
+- UT只有連接到SAT1
+- 封包尋找最短路徑忽略SAT0
 
 ## flowchart
 <img width="822" height="852" alt="image" src="https://github.com/user-attachments/assets/09697f40-c516-4ccd-8a7c-027241dd6a27" />

@@ -40,20 +40,22 @@ def get_labels(file_name):
     else:
         return "X-Axis", "Y-Axis"
 
-def plot_data(folder, file_keyword, output_root):
-    # 搜尋數據路徑
-    search_pattern = os.path.join(folder, f"*{file_keyword}*.txt")
+def plot_individual_data(data_dir, file_keyword):
+    # 1. 自動偵測來源資料夾名稱 (例如 'leocon-ex1')
+    source_folder_name = os.path.basename(os.path.normpath(data_dir))
+    
+    # 2. 動態建立輸出資料夾 (例如 'results/plot_leocon-ex1')
+    output_dir = os.path.join("results", f"plot_{source_folder_name}")
+    os.makedirs(output_dir, exist_ok=True)
+    print(f"📁 所有個別圖檔將存入: {output_dir}")
+
+    # 3. 搜尋數據路徑
+    search_pattern = os.path.join(data_dir, f"*{file_keyword}*.txt")
     files = glob.glob(search_pattern)
     
     if not files:
-        print(f"❌ 找不到檔案！路徑: {search_pattern}")
+        print(f"❌ 在 {data_dir} 找不到符合條件的檔案。")
         return
-
-    # 建立輸出的資料夾 (例如: output_plots/leocon-ex1)
-    # os.path.basename(folder) 會取得 "leocon-ex1"
-    target_output_dir = os.path.join(output_root, os.path.basename(folder))
-    os.makedirs(target_output_dir, exist_ok=True)
-    print(f"📁 圖片將儲存至: {target_output_dir}")
 
     for file_path in files:
         file_name = os.path.basename(file_path)
@@ -76,32 +78,30 @@ def plot_data(folder, file_keyword, output_root):
 
             plt.figure(figsize=(10, 6))
             plt.plot(x, y, label=file_name, color='dodgerblue', linewidth=1.2)
-            plt.title(f"Simulation Analysis: {ylabel}\nSource: {file_name}", fontsize=12)
+            plt.title(f"Analysis: {ylabel}\nSource: {file_name}", fontsize=12)
             plt.xlabel(xlabel)
             plt.ylabel(ylabel)
             plt.grid(True, linestyle='--', alpha=0.6)
             plt.legend(loc='upper right', fontsize='small')
 
-            # --- 修改存檔路徑 ---
-            # 檔名從 .txt 換成 .png，並存到 target_output_dir
+            # --- 存入統一的 plot_ 資料夾 ---
             save_name = file_name.replace('.txt', '.png')
-            save_path = os.path.join(target_output_dir, save_name)
+            save_path = os.path.join(output_dir, save_name)
             
             plt.savefig(save_path, dpi=200, bbox_inches='tight')
             plt.close()
-            print(f"✅ 已儲存圖片: {save_path}")
+            print(f"✅ 已儲存: {save_path}")
 
         except Exception as e:
             print(f"⚠️ 處理 {file_name} 時發生錯誤: {e}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="自動化繪圖工具 - 支援獨立輸出資料夾")
-    parser.add_argument("--dir", default="leocon-ex1", help="數據來源資料夾")
-    parser.add_argument("--name", default="", help="檔案關鍵字")
-    parser.add_argument("--out", default="output_plots", help="圖片輸出總目錄 (預設: output_plots)")
+    parser = argparse.ArgumentParser(description="自動化個別繪圖工具 - 支援自動分類資料夾")
+    parser.add_argument("--dir", required=True, help="數據來源資料夾路徑 (例如 results/leocon-ex1)")
+    parser.add_argument("--name", default="", help="檔案關鍵字過濾")
 
     args = parser.parse_args()
-    plot_data(args.dir, args.name, args.out)
+    plot_individual_data(args.dir, args.name)
 ```
 
 ### 前往資料夾
@@ -110,7 +110,7 @@ cd ~/ns-3.43/results
 ```
 ### 執行程式檔
 ```
-python3 plot.py --dir leocon-ex1 --name sat --out sat
+python3 plot.py --dir leocon-ex1 --name sat 
 ```
 ### Output
 <img width="918" height="222" alt="image" src="https://github.com/user-attachments/assets/dcba62b0-a125-495b-9e57-57ba54c10b7b" />

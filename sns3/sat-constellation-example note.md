@@ -168,7 +168,7 @@ ls
 
 ### **satellite throughput**
 
-|item|SAT0|SAT1|
+|item|SAT0(ID 0)|SAT1(ID 1)|
 |---|---|---|
 |**RTN**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/b66cf99c-cab4-411d-ad05-939b2f01020b" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/e5a3c1b8-c5a0-4997-88cc-6e8530a241f3" />|
 |**FWD**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/1d4152ec-6b72-4cba-b67c-3da4109de54d" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/bc582ef4-66a8-42fc-a28b-6e27cf112323" />|
@@ -176,7 +176,7 @@ ls
 
 ### **per-beam throughput**
 
-|item|SAT0|SAT1|
+|item|SAT0(ID 0)|SAT1(ID 1)|
 |---|---|---|
 |**RTN**|<img width="3068" height="1945" alt="image" src="https://github.com/user-attachments/assets/6a22fd7f-92d8-4898-aa35-93e38905c420" />|<img width="3046" height="1945" alt="image" src="https://github.com/user-attachments/assets/aee4b65e-bfa5-4fc4-a73c-cff4cf83c13e" />|
 |**FWD**|<img width="3068" height="1945" alt="image" src="https://github.com/user-attachments/assets/b88530b0-3049-4708-b083-91b310b154b9" />|<img width="3046" height="1945" alt="image" src="https://github.com/user-attachments/assets/30d07178-4aab-4418-8a4d-d2191af8f495" />|

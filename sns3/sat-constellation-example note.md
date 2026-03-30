@@ -175,8 +175,7 @@ ls
 |**FWD**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/cdb71f99-89b9-4d05-8aad-1ac67a5dd918" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/3f8b98a7-fdda-41ff-89ff-f5db68775516" />|
 
 **造成只有SAT1有流量的原因**
-- UT位置
-- UT只有連接到SAT1
+- UT位置靠近SAT1且只有連接到SAT1
 - 封包尋找最短路徑忽略SAT0
 
 ### Distance && Throughput
@@ -191,13 +190,8 @@ ls
 |UT5|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/8bae2c85-92df-4171-b08d-e6d3ee6ffce5" />|UT11|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/58df2e87-4522-43da-8991-c4b8b74fa06f" />|
 |||UT12|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/29e98ca4-6957-42ee-84a1-e0dcd44f8daf" />|
 
+UT 位置距離地心約 6,378,137 公尺（ 設定 WGS84 的地球平均半徑為 6371 公里）
 
-<img width="1137" height="474" alt="image" src="https://github.com/user-attachments/assets/35711be1-0195-4364-8a40-dac53ef61a4f" />
-    <p align="center"><strong>Figure 9.</strong> Satellite channel structure with 16 beams </p>
-
-
-
-width="500" height="500"
 
 ## flowchart
 <img width="822" height="852" alt="image" src="https://github.com/user-attachments/assets/09697f40-c516-4ccd-8a7c-027241dd6a27" />

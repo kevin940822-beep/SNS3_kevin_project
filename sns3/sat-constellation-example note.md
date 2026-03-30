@@ -191,7 +191,7 @@ ls
 |UT5|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/8bae2c85-92df-4171-b08d-e6d3ee6ffce5" />|UT11|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/58df2e87-4522-43da-8991-c4b8b74fa06f" />|
 |||UT12|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/29e98ca4-6957-42ee-84a1-e0dcd44f8daf" />|
 
-與SAT1距離(使用地心坐標 (ECEF)：
+與SAT1距離(使用地心坐標 (ECEF))：
 
 - **UT11 > UT4 > UT5 > UT10 > UT12**
   - UT4、UT5 使用Beam30
@@ -202,6 +202,8 @@ ls
 - 鏈路品質最佳距離
   - Beam30：大約在距離 420~1800km (420為理論最短距離)
   - Beam43：大約在距離 420~1600km (420為理論最短距離)
+  - (512 Bytes * 8)/0.02s = 204.8 kbps
+  - 每個UT都跑了6應用程式流 (204.8 * 6 = 1228)
 - 斷線距離
   - Beam30：大約在距離 2300~2400km 時斷線
   - Beam43：大約在距離 2300~2600km 時斷線

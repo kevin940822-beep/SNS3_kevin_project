@@ -181,7 +181,9 @@ ls
 
 ### Distance && Throughput
 
+<div align="center">
 <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/91682055-caf5-4ca3-8683-6ddc4e5f05f1" />
+</div>
 
 |items|Beam30|item|Beam43|
 |---|---|---|---|
@@ -189,6 +191,9 @@ ls
 |UT5|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/8bae2c85-92df-4171-b08d-e6d3ee6ffce5" />|UT11|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/58df2e87-4522-43da-8991-c4b8b74fa06f" />|
 |||UT12|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/29e98ca4-6957-42ee-84a1-e0dcd44f8daf" />|
 
+
+<img width="1137" height="474" alt="image" src="https://github.com/user-attachments/assets/35711be1-0195-4364-8a40-dac53ef61a4f" />
+    <p align="center"><strong>Figure 9.</strong> Satellite channel structure with 16 beams </p>
 
 
 

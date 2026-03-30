@@ -182,7 +182,7 @@ ls
 ### Distance && Throughput
 
 <div align="center">
-<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/91682055-caf5-4ca3-8683-6ddc4e5f05f1" />
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/a2e19d16-a6d8-4ca2-9491-3ce51f0cfdbd" />
 </div>
 
 |items|Beam30|item|Beam43|

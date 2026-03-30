@@ -4,7 +4,7 @@
 # Table of Contents 
 - [Step](#step)
 - [修改LEO環境](#修改leo環境)
-- [Output](#satellite-throughput)
+- [satellite throughput](#satellite-throughput)
 - [flowchart](#flowchart)
 
 ## Step
@@ -190,8 +190,20 @@ ls
 |UT5|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/8bae2c85-92df-4171-b08d-e6d3ee6ffce5" />|UT11|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/58df2e87-4522-43da-8991-c4b8b74fa06f" />|
 |||UT12|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/29e98ca4-6957-42ee-84a1-e0dcd44f8daf" />|
 
-UT 位置距離地心約 6,378,137 公尺（ 設定 WGS84 的地球平均半徑為 6371 公里）
+與SAT1距離(使用地心坐標 (ECEF))：
 
+- **UT11 > UT4 > UT5 > UT10 > UT12**
+  - UT4、UT5使用Beam30
+  - UT10、UT11、UT12使用Beam43
+-
+  - Beam43：1600~2000
+  - Beam30：
+- 斷線距離
+  - Beam43：大約在距離 2300~2600km 時斷線
+  - Beam30：大約在距離 2300~2400km 時斷線
+- 當衛星的波束中心點（Gain 最高處）剛好飛過該 UT 時，吞吐量會瞬間翻倍。
+- 200秒之後的吞吐量峰值雖然還能衝高，但維持時間明顯縮短且波動變大。
+  - 因為**距離增加導致 SINR下降**，系統必須頻繁切換調變等級（MODCOD）來維持連線，導致傳輸效率變得不穩定。
 
 ## flowchart
 <img width="822" height="852" alt="image" src="https://github.com/user-attachments/assets/09697f40-c516-4ccd-8a7c-027241dd6a27" />

@@ -179,16 +179,17 @@ ls
 - UT只有連接到SAT1
 - 封包尋找最短路徑忽略SAT0
 
-### Throughput
+### Distance && Throughput
+
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/91682055-caf5-4ca3-8683-6ddc4e5f05f1" />
+
 |items|Beam30|item|Beam43|
 |---|---|---|---|
 |UT4|<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/16b8a3d6-cf25-43a9-9a0e-7349159d9569" />|UT10|<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f8eb60f2-8b7c-416d-83cf-e7cd35debb7d" />|
 |UT5|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/8bae2c85-92df-4171-b08d-e6d3ee6ffce5" />|UT11|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/58df2e87-4522-43da-8991-c4b8b74fa06f" />|
 |||UT12|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/29e98ca4-6957-42ee-84a1-e0dcd44f8daf" />|
 
-|UT10|<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f8eb60f2-8b7c-416d-83cf-e7cd35debb7d" />|
-|UT11|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/58df2e87-4522-43da-8991-c4b8b74fa06f" />|
-|UT12|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/29e98ca4-6957-42ee-84a1-e0dcd44f8daf" />|
+
 
 
 width="500" height="500"

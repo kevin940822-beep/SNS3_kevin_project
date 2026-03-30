@@ -171,21 +171,27 @@ ls
 
 |item|SAT0(ID 0)|SAT1(ID 1)|
 |---|---|---|
-|**RTN**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/b66cf99c-cab4-411d-ad05-939b2f01020b" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/e5a3c1b8-c5a0-4997-88cc-6e8530a241f3" />|
-|**FWD**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/1d4152ec-6b72-4cba-b67c-3da4109de54d" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/bc582ef4-66a8-42fc-a28b-6e27cf112323" />|
-
-
-### **per-beam throughput**
-
-|item|SAT0(ID 0)|SAT1(ID 1)|
-|---|---|---|
-|**RTN**|<img width="3068" height="1945" alt="image" src="https://github.com/user-attachments/assets/6a22fd7f-92d8-4898-aa35-93e38905c420" />|<img width="3046" height="1945" alt="image" src="https://github.com/user-attachments/assets/aee4b65e-bfa5-4fc4-a73c-cff4cf83c13e" />|
-|**FWD**|<img width="3068" height="1945" alt="image" src="https://github.com/user-attachments/assets/b88530b0-3049-4708-b083-91b310b154b9" />|<img width="3046" height="1945" alt="image" src="https://github.com/user-attachments/assets/30d07178-4aab-4418-8a4d-d2191af8f495" />|
+|**RTN**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/8b555dcd-9a97-4304-87aa-74d0a948a8a4" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/ec15faa3-94a2-482f-9fae-168b4f22e727" />|
+|**FWD**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/cdb71f99-89b9-4d05-8aad-1ac67a5dd918" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/3f8b98a7-fdda-41ff-89ff-f5db68775516" />|
 
 **造成只有SAT1有流量的原因**
 - UT位置
 - UT只有連接到SAT1
 - 封包尋找最短路徑忽略SAT0
+
+### Throughput
+|items|Beam30|item|Beam43|
+|---|---|---|---|
+|UT4|<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/16b8a3d6-cf25-43a9-9a0e-7349159d9569" />|UT10|<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f8eb60f2-8b7c-416d-83cf-e7cd35debb7d" />|
+|UT5|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/8bae2c85-92df-4171-b08d-e6d3ee6ffce5" />|UT11|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/58df2e87-4522-43da-8991-c4b8b74fa06f" />|
+|||UT12|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/29e98ca4-6957-42ee-84a1-e0dcd44f8daf" />|
+
+|UT10|<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f8eb60f2-8b7c-416d-83cf-e7cd35debb7d" />|
+|UT11|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/58df2e87-4522-43da-8991-c4b8b74fa06f" />|
+|UT12|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/29e98ca4-6957-42ee-84a1-e0dcd44f8daf" />|
+
+
+width="500" height="500"
 
 ## flowchart
 <img width="822" height="852" alt="image" src="https://github.com/user-attachments/assets/09697f40-c516-4ccd-8a7c-027241dd6a27" />

@@ -178,6 +178,7 @@ ls
 **造成只有SAT1有流量的原因**
 - UT位置靠近SAT1且只有連接到SAT1
 - 封包尋找最短路徑忽略SAT0
+- 程式碼設定從1秒開始發送流量
 
 ### Distance && Throughput
 

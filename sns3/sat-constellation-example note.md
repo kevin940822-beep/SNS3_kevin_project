@@ -231,8 +231,10 @@ Config::SetDefault("ns3::SatUtPhy::TxMaxPowerDbw", DoubleValue(40.0));
 ## flowchart
 <img width="822" height="852" alt="image" src="https://github.com/user-attachments/assets/09697f40-c516-4ccd-8a7c-027241dd6a27" />
 
-
-
+環境loss直接讀取folder(constellation-leo-2-satellites)
+```
+    simulationHelper->LoadScenario(scenarioFolder);
+```
 
 
 # 試著將LEO環境換成constellation-telesat-351-sats

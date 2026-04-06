@@ -217,6 +217,8 @@ ls
 <img width="822" height="852" alt="image" src="https://github.com/user-attachments/assets/09697f40-c516-4ccd-8a7c-027241dd6a27" />
 
 
+### 將區間改成1ms，PHYTx改成40dB
+
 
 # 試著將LEO環境換成constellation-telesat-351-sats
 

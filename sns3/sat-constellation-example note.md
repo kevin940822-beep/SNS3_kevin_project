@@ -224,10 +224,9 @@ Config::SetDefault("ns3::SatUtPhy::TxMaxPowerDbw", DoubleValue(40.0));
   - Beam30：大約在距離 2300~2400km 時斷線
   - Beam43：大約在距離 2300~2600km 時斷線
  
-系統單一 UT 最多只能分到一個載波裡的部分時槽 (Timeslots)，換算下來極限為 2200 kbps。
-
-物理頻寬都大於 MAC 的限速 (2200 kbps)
-- 導致單一UT throughput看不到階梯式下降()
+- 系統單一 UT 最多只能分到一個載波裡的部分時槽 (Timeslots)，換算下來極限為 2200 kbps。
+  - 物理頻寬都大於 MAC 的限速 (2200 kbps)
+  - 導致單一UT throughput看不到階梯式下降()
 
 ## flowchart
 <img width="822" height="852" alt="image" src="https://github.com/user-attachments/assets/09697f40-c516-4ccd-8a7c-027241dd6a27" />

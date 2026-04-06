@@ -228,13 +228,14 @@ Config::SetDefault("ns3::SatUtPhy::TxMaxPowerDbw", DoubleValue(40.0));
   - 物理頻寬都大於 MAC 的限速 (2200 kbps)
   - 導致單一UT throughput看不到階梯式下降()
 
+環境loss直接讀取folder(constellation-leo-2-satellites)
+```
+simulationHelper->LoadScenario(scenarioFolder);
+```
 ## flowchart
 <img width="822" height="852" alt="image" src="https://github.com/user-attachments/assets/09697f40-c516-4ccd-8a7c-027241dd6a27" />
 
-環境loss直接讀取folder(constellation-leo-2-satellites)
-```
-    simulationHelper->LoadScenario(scenarioFolder);
-```
+
 
 
 # 試著將LEO環境換成constellation-telesat-351-sats

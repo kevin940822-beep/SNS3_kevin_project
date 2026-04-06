@@ -170,7 +170,9 @@ ls
 
 ### **satellite throughput**
 
-#### 將區間改成1ms，改成40dB(提升 RTN 鏈路的發射功率)
+#### 將封包區間改成1ms，TxMaxPowerDbw改成40dB(提升 RTN 鏈路的發射功率)
+
+**大約4096kbps**
 ```
 uint32_t packetSize = 512;
 std::string interval = "1ms";
@@ -183,6 +185,11 @@ Config::SetDefault("ns3::SatUtPhy::TxMaxPowerDbw", DoubleValue(40.0));
 |**RTN**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/8b555dcd-9a97-4304-87aa-74d0a948a8a4" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/38977017-2bd3-4de6-afb7-9a938f2b49de" />|
 |**FWD**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/cdb71f99-89b9-4d05-8aad-1ac67a5dd918" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/9c42ee0d-0451-4ab5-93e7-bfadadd0688e" />|
 
+- FWD鏈路最高吞吐量約 120,000 kbps (約 120 Mbps)
+  - **ACM 機制** 將 **MODCOD** 從高階調變 (32APSK) 一路切換到低階調變 (QPSK)
+- RTN鏈路最高吞吐量約 11,000 kbps (約 11 Mbps)
+  - 頻寬被切分成了多個小的載波 (Carriers)
+
 **造成只有SAT1有流量的原因**
 - UT位置靠近SAT1且只有連接到SAT1
 - 封包尋找最短路徑忽略SAT0
@@ -194,7 +201,7 @@ Config::SetDefault("ns3::SatUtPhy::TxMaxPowerDbw", DoubleValue(40.0));
 <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/2963d004-8814-4635-9073-8f073bf3b7df" />
 </div>
 
-|items|Beam30|item|Beam43|
+|items|Beam30|items|Beam43|
 |---|---|---|---|
 |UT4|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/63b190e0-828f-4b9a-8fac-9bde12187696" />|UT10|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/d0271e8f-ed73-4899-b1d8-685c2d6c04c9" />|
 |UT5|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/ca973e5f-62f1-45c2-ba62-49f5f603c7bc" />|UT11|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/65829f8b-5efd-4b3c-aebf-4795f56ce519" />|
@@ -216,10 +223,11 @@ Config::SetDefault("ns3::SatUtPhy::TxMaxPowerDbw", DoubleValue(40.0));
 - 斷線距離
   - Beam30：大約在距離 2300~2400km 時斷線
   - Beam43：大約在距離 2300~2600km 時斷線
+ 
+系統單一 UT 最多只能分到一個載波裡的部分時槽 (Timeslots)，換算下來極限為 2200 kbps。
 
-- 當衛星的波束中心點（Gain 最高處）剛好飛過該 UT 時，吞吐量會瞬間翻倍。
-- Beam43：150秒之後的吞吐量峰值雖然還能衝高，但維持時間明顯縮短且波動變大。
-  - 因為**距離增加導致 SINR下降**，系統必須頻繁切換調變等級（MODCOD）來維持連線，導致傳輸效率變得不穩定。
+物理頻寬都大於 MAC 的限速 (2200 kbps)
+- 導致單一UT throughput看不到階梯式下降()
 
 ## flowchart
 <img width="822" height="852" alt="image" src="https://github.com/user-attachments/assets/09697f40-c516-4ccd-8a7c-027241dd6a27" />

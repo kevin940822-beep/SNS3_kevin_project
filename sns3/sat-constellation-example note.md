@@ -170,10 +170,18 @@ ls
 
 ### **satellite throughput**
 
+#### 將區間改成1ms，改成40dB(提升 RTN 鏈路的發射功率)
+```
+uint32_t packetSize = 512;
+std::string interval = "1ms";
+...
+Config::SetDefault("ns3::SatUtPhy::TxMaxPowerDbw", DoubleValue(40.0));
+```
+
 |item|SAT0(ID 0)|SAT1(ID 1)|
 |---|---|---|
-|**RTN**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/8b555dcd-9a97-4304-87aa-74d0a948a8a4" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/ec15faa3-94a2-482f-9fae-168b4f22e727" />|
-|**FWD**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/cdb71f99-89b9-4d05-8aad-1ac67a5dd918" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/3f8b98a7-fdda-41ff-89ff-f5db68775516" />|
+|**RTN**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/8b555dcd-9a97-4304-87aa-74d0a948a8a4" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/38977017-2bd3-4de6-afb7-9a938f2b49de" />|
+|**FWD**|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/cdb71f99-89b9-4d05-8aad-1ac67a5dd918" />|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/9c42ee0d-0451-4ab5-93e7-bfadadd0688e" />|
 
 **造成只有SAT1有流量的原因**
 - UT位置靠近SAT1且只有連接到SAT1
@@ -183,14 +191,14 @@ ls
 ### Distance && Throughput
 
 <div align="center">
-<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/a2e19d16-a6d8-4ca2-9491-3ce51f0cfdbd" />
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/2963d004-8814-4635-9073-8f073bf3b7df" />
 </div>
 
 |items|Beam30|item|Beam43|
 |---|---|---|---|
-|UT4|<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/16b8a3d6-cf25-43a9-9a0e-7349159d9569" />|UT10|<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f8eb60f2-8b7c-416d-83cf-e7cd35debb7d" />|
-|UT5|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/8bae2c85-92df-4171-b08d-e6d3ee6ffce5" />|UT11|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/58df2e87-4522-43da-8991-c4b8b74fa06f" />|
-|||UT12|<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/29e98ca4-6957-42ee-84a1-e0dcd44f8daf" />|
+|UT4|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/63b190e0-828f-4b9a-8fac-9bde12187696" />|UT10|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/d0271e8f-ed73-4899-b1d8-685c2d6c04c9" />|
+|UT5|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/ca973e5f-62f1-45c2-ba62-49f5f603c7bc" />|UT11|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/65829f8b-5efd-4b3c-aebf-4795f56ce519" />|
+|||UT12|<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/7d92af19-aab9-447e-9007-ce1fbe4969b4" />|
 
 與SAT1距離(使用地心坐標 (ECEF))：
 
@@ -217,7 +225,7 @@ ls
 <img width="822" height="852" alt="image" src="https://github.com/user-attachments/assets/09697f40-c516-4ccd-8a7c-027241dd6a27" />
 
 
-### 將區間改成1ms，PHYTx改成40dB
+
 
 
 # 試著將LEO環境換成constellation-telesat-351-sats

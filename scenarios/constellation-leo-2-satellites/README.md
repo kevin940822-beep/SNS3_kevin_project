@@ -1,3 +1,5 @@
+## DVB-RCS2 waveform.txt
+
 | 欄位 | 名稱 | 說明 | 範例 |
 |---|---|---|---|
 | 1 | Waveform Index | SNS3 內部索引 |`1`~`22`<br>且 `default_waveform.txt` : 預設 UT 會使用第 3 行的配置來起步)|

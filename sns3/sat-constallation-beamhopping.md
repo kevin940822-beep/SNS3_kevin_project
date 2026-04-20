@@ -1,3 +1,13 @@
+## 參數
+- UT : 3
+- GW : 1
+- beam ID : 1, 2, 41
+- 摸擬時間 : 60s
+- packetSize = 512 Bytes
+- interval = 20ms
+
+
+
 將環境改為
 
 ```

@@ -1,0 +1,44 @@
+將環境改為
+
+```
+geo-33E-beam-hopping
+```
+
+設定beamID與beamhopping (line 108)
+```
+// Set beam ID
+    if (scenarioFolder == "constellation-telesat-351-sats")
+    {
+        simulationHelper->SetBeamSet(beamSetTelesat);
+    }
+    else if (scenarioFolder == "geo-33E-beam-hopping") 
+    {
+    // 針對跳躍場景使用 GW-1 的波束 
+    std::set<uint32_t> beamSetHopping = {1, 2, 41};
+    simulationHelper->SetBeamSet(beamSetHopping);
+    }
+    else
+    {
+        simulationHelper->SetBeamSet(beamSet); 
+    }
+    
+    simulationHelper->SetUserCountPerUt(2);
+
+    std::map<uint32_t, uint32_t> utsInBeam = {
+    {41, 1}, // 第一組座標在 Beam 41
+    {1, 1},  
+    {2, 1}
+    };
+
+    for (const auto& it : utsInBeam)
+    {
+        simulationHelper->SetUtCountPerBeam(it.first, it.second);
+    }
+
+
+   
+
+    LogComponentEnable("sat-constellation-example", LOG_LEVEL_INFO);
+    simulationHelper->ConfigureFwdLinkBeamHopping();
+    simulationHelper->CreateSatScenario();
+```

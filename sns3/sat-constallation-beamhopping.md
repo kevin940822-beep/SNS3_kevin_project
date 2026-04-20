@@ -1,7 +1,10 @@
 # Table of contents
 - [參數](#參數)
-- [環境修改])(#將環境改為)
+- [環境修改](#將環境改為)
 - [Output](#output)
+    - [Per Beam App Throughput](#per-beam-app-throughput)
+    - [Per UT App Throughput](#per-ut-app-throughput)
+    - [User link SINR](#user-link-sinr)
 
 ## 參數
 - UT : 3

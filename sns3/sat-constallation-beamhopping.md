@@ -25,9 +25,20 @@ geo-33E-beam-hopping
     simulationHelper->SetUserCountPerUt(2);
 
     std::map<uint32_t, uint32_t> utsInBeam = {
-    {41, 1}, // 第一組座標在 Beam 41
-    {1, 1},  
-    {2, 1}
+    {1, 15},
+                                              {2, 4},
+                                              {3, 7},
+                                              {4, 15},
+                                              {11, 7},
+                                              {12, 15},
+                                              {13, 4},
+                                              {14, 9},
+                                              {25, 4},
+                                              {26, 7},
+                                              {27, 9},
+                                              {28, 15},
+                                              {40, 4},
+                                              {41, 7}
     };
 
     for (const auto& it : utsInBeam)
@@ -42,3 +53,5 @@ geo-33E-beam-hopping
     simulationHelper->ConfigureFwdLinkBeamHopping();
     simulationHelper->CreateSatScenario();
 ```
+
+

@@ -25,7 +25,7 @@ if (app->TraceConnectWithoutContext("Rx", callback))
 ```
 ### 2️⃣Unit Conversion
 
-`UnitConversionCollector` with `FROM_BYTES_TO_KBIT` conversion type
+`UnitConversionCollector` with `FROM_BYTES_TO_KBIT` conversion type (將原始位元組計數轉換為資料速率)
 
 [Line 144](https://github.com/sns3/sns3-satellite/blob/0fc2b8c7/stats/satellite-stats-throughput-helper.cc#L144)
 ```
@@ -36,7 +36,7 @@ m_conversionCollectors.SetAttribute("ConversionType",
 
 ### 3️⃣Rate Calculation
 
-- For scalar output : Uses `ScalarCollector` with `OUTPUT_TYPE_AVERAGE_PER_SECOND` to calculate average throughput in kbps
+- For **scalar output** : Uses `ScalarCollector` with `OUTPUT_TYPE_AVERAGE_PER_SECOND` to calculate average throughput in kbps
 
 [Line 132](https://github.com/sns3/sns3-satellite/blob/0fc2b8c7/stats/satellite-stats-throughput-helper.cc#L132)
 ```
@@ -48,7 +48,7 @@ m_terminalCollectors.SetAttribute(
     EnumValue(ScalarCollector::OUTPUT_TYPE_AVERAGE_PER_SECOND));
 ```
 
-- For scatter output : Uses `IntervalRateCollector` for time-series throughput data
+- For **scatter output** : Uses `IntervalRateCollector` for time-series throughput data
 
 [Line 163](https://github.com/sns3/sns3-satellite/blob/0fc2b8c7/stats/satellite-stats-throughput-helper.cc#L163)
 ```

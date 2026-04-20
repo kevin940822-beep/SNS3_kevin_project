@@ -1,8 +1,8 @@
 # Table of Contnet
-- [calculate throughput](#calculate-throughput)
-- [calculate SINR](#calculate-sinr)
+- [Calculate throughput](#calculate-throughput)
+- [Calculate SINR](#calculate-sinr)
 
-## calculate throughput
+## Calculate throughput
 
 ## Step
 
@@ -59,7 +59,7 @@ m_terminalCollectors.SetAttribute(
 ```
 
 
-## **calculate SINR**
+## **Calculate SINR**
 [satellite-phy-rx-carrier.cc](https://github.com/sns3/sns3-satellite/blob/0fc2b8c7/model/satellite-phy-rx-carrier.cc#L631-L655)
 
 ### SINR 的基本計算公式為：

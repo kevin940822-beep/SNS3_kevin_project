@@ -13,7 +13,7 @@
 
 ### 1️⃣Trace Source Connection
 
-For application-level throughput, it connects to the **"Rx"** **trace source** of applications
+For application-level throughput, it connects to the **"Rx"** **trace source**(追蹤來源) of applications
 
 [Line 1338](https://github.com/sns3/sns3-satellite/blob/0fc2b8c7/stats/satellite-stats-throughput-helper.cc#L1338)
 ```

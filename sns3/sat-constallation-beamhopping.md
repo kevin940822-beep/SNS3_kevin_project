@@ -4,7 +4,7 @@
 geo-33E-beam-hopping
 ```
 
-設定beamID與beamhopping (line 108)
+設定beamID與beamhopping [(line 108)](https://github.com/sns3/sns3-satellite/blob/master/examples/sat-constellation-example.cc)
 ```
 // Set beam ID
     if (scenarioFolder == "constellation-telesat-351-sats")
@@ -24,6 +24,7 @@ geo-33E-beam-hopping
     
     simulationHelper->SetUserCountPerUt(2);
 
+    //將UT改一半方便跑
     std::map<uint32_t, uint32_t> utsInBeam = {
     {1, 15},
                                               {2, 4},

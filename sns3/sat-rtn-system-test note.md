@@ -1,7 +1,7 @@
 # sat-rtn-system-test-example.cc
 ### [Refrence ](https://github.com/sns3/sns3-satellite/blob/0fc2b8c74f0d9c2b0c3ee4ed132064a40ad2daf1/examples/sat-rtn-system-test-example.cc)
 
-### [sns3 set up](./SNS3_Installation.md)
+### [sns3 set up](./SNS3_installation.md)
 
 # Table of Contents
 - [Architecture](#architecture)
